@@ -1,0 +1,80 @@
+query=PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
+PREFIX temp:<http://def.seegrid.csiro.au/def/ftc-temp#>
+prefix gf:<http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> 
+prefix gml:<http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#> 
+
+PREFIX mapping:  <http://csiro.au/hollowWorld/classmaps/20130208/mappingModel#> 
+PREFIX h2o: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#>
+
+CONSTRUCT {
+   ?bind a temp:propertybinding .  
+   ?bind temp:onFeature ?ftt .  
+   ?bind owl:annotatedTarget ?ft .
+   ?bind owl:onProperty ?prop .
+    ?bind gml:nillable ?nil .
+    ?bind gml:inlineOrByReference ?iobr .
+    ?bind gml:sequenceNumber ?seq2 .
+   ?bind owl:cardinality ?c .
+   ?bind owl:maxCardinality ?maxc .
+   ?bind owl:minCardinality ?minc .
+   ?bind rdfs:range ?type .
+   ?bind rdfs:comment ?notes .
+   ?prop rdfs:comment ?axiom_notes .
+   ?bind rdfs:label ?label .
+   ?bind temp:associationClass ?assocClass .
+ } 
+WHERE {
+
+  graph ?g {
+    ?restriction owl:onProperty ?prop .
+    ?prop rdfs:label ?propname .
+
+     OPTIONAL {
+       ?ax a owl:Axiom ;
+       owl:annotatedSource ?ftt ;
+       owl:annotatedTarget/owl:onProperty ?prop .
+       OPTIONAL { ?ax gml:nillable ?nil }
+       OPTIONAL { ?ax gml:inlineOrByReference ?iobr }
+      OPTIONAL { ?ax gml:sequenceNumber ?seq2  }
+      OPTIONAL { ?ax rdfs:comment ?axiom_notes  }
+	  }
+
+   
+    OPTIONAL {?prop rdfs:range ?range . ?range owl:unionOf ?u. ?u rdf:rest*/rdf:first ?assocClass . ?assocClass h2o:isAssociationClass "true"^^xsd:boolean .}
+
+	OPTIONAL { ?restriction owl:cardinality ?c . }  
+      
+    OPTIONAL { ?restriction owl:maxCardinality ?maxc . }  
+      
+    OPTIONAL { ?restriction owl:minCardinality ?minc . } 
+     
+    OPTIONAL { ?restriction owl:allValuesFrom ?type . } 
+      
+    OPTIONAL { ?restriction rdfs:comment ?notes . } 
+      
+    OPTIONAL { ?restriction rdfs:label ?label . }      
+  }
+
+  {
+    select distinct ?ft ?ftt ?restriction
+    where {
+      ?ft rdfs:subClassOf ?meta.
+      ?meta h2o:isStereotype  "true"^^xsd:boolean .
+      
+      ?ft rdfs:subClassOf ?ftt .
+     
+      ?ftt rdfs:subClassOf ?meta2. 
+      ?meta2 h2o:isStereotype  "true"^^xsd:boolean .
+      
+      ?ftt rdfs:subClassOf ?restriction . 
+      ?restriction a owl:Restriction  .
+    }
+  }
+
+  BIND(URI( CONCAT( STR(?ft),"_", REPLACE ( ?propname, "[^A-Za-z0-9_]" , "_" )) ) AS ?bind) .
+}
+
+

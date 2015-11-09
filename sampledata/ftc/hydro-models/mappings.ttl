@@ -1,0 +1,3 @@
+@prefix temp: <http://def.seegrid.csiro.au/def/ftc-temp#> .
+
+<http://pid.ereefs.info/def/schema/ahgf/HR_Catchments/AHGFContractedCatchment> temp:realises <http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin> .

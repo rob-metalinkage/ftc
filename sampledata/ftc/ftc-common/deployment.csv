@@ -1,0 +1,8 @@
+files,targetRepos,targetContext,clearTargetContext,tmpRepos,tmpContext,clearTmpContext,postProcFile
+skos.rdf,%REPOSURI%/ftc,http://www.w3.org/2004/02/skos/core,true,,,,none
+mapping.rdf,%REPOSURI%/ftc,http://www.w3.org/2004/02/skos/mapping,true,,,,none
+gmlMappingModel.rdf,%REPOSURI%/ftc,http://csiro.au/hollowWorld/classmaps/20130208/mappingModel,true,,,,none
+# This is the VOID model of the FTC API endpoints
+ftc_metamodel.ttl,%REPOSURI%/ftc,http://def.seegrid.csiro.au/def/ftc,true,,,,none
+lid_metamodel.ttl,%REPOSURI%/ftc,http://def.seegrid.csiro.au/def/lid,true,,,,none
+void.ttl,%REPOSURI%/ftc,http://vocab.deri.ie/void,true,,,,none

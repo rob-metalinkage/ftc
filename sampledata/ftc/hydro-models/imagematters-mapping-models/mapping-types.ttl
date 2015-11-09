@@ -1,0 +1,292 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ks:      <http://www.usersmarts.com/ont/2005/06/ks#> .
+@prefix ksd:     <http://www.usersmarts.com/ont/2007/02/ks/descriptor#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mapping:  <http://www.knowledgesmarts.com/ontologies/mapping#> .
+@prefix fn:      <http://www.knowledgesmarts.com/ontology/functions#> .
+@prefix prm:     <http://www.smartrealm.com/ont/ks/param#> .
+@prefix ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> .
+
+#
+# ClassMapping type
+#
+mapping:ClassMapping 
+      a       owl:Class ;
+      rdfs:subClassOf mapping:Mapping ;
+      mapping:mappingRule
+              [ a       mapping:SPARQLRule ;
+                mapping:body """PREFIX fn:		<http://www.knowledgesmarts.com/ontology/functions#>
+								PREFIX ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> 
+								CONSTRUCT {
+									?target a ?targetType.
+								}
+								WHERE {
+									?this a ?sourceType .
+									BIND (ksfun:apply(?expression,fn:arg1,?this) AS ?target ).
+								}
+							 """ ;
+                mapping:queryLanguage ksd:KSPARQL
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:expression ;
+                ksd:valueType fn:Function
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:targetType ;
+                ksd:valueType rdfs:Class
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:sourceType ;
+                ksd:valueType rdfs:Class
+              ].
+      
+#
+# Property Mapping
+#
+mapping:PropertyMapping
+      a       owl:Class ;
+      rdfs:subClassOf mapping:Mapping ;
+      mapping:mappingRule
+              [ a       mapping:SPARQLRule ;
+                mapping:body """PREFIX fn:		<http://www.knowledgesmarts.com/ontology/functions#>
+							    PREFIX ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> 							
+								CONSTRUCT {
+									?target ?targetPredicate ?newValue .
+								}
+								WHERE {
+									?this ?sourcePredicate ?oldValue .
+									?this a ?sourceType .
+									BIND (fn:object(?context,mapping:sourceType) AS ?sourceType) .
+								
+									BIND (ksfun:if(ksfun:bound(?expression),ksfun:apply(?expression,fn:arg1,?oldValue),?oldValue) AS ?newValue) .
+									BIND (ksfun:apply(fn:object(?context,mapping:expression),fn:arg1,?this) AS ?target) .
+								}""";
+                mapping:queryLanguage ksd:KSPARQL
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:sourcePredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:targetPredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:expression ;
+                ksd:valueType rdfs:Resource
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:context ;
+                ksd:valueType mapping:ClassMapping
+              ] .
+
+#
+# Property Mapping
+#
+mapping:PropertyMapping-0-1
+      a       owl:Class ;
+      rdfs:subClassOf mapping:Mapping ;
+      mapping:mappingRule
+              [ a       mapping:SPARQLRule ;
+                mapping:body """PREFIX fn:		<http://www.knowledgesmarts.com/ontology/functions#>
+							    PREFIX ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> 							
+								CONSTRUCT {
+									?target ?targetPredicate ?newValue .
+								}
+								WHERE {
+									?this a ?sourceType .
+									BIND (fn:object(?context,mapping:sourceType) AS ?sourceType) .
+									BIND (ksfun:apply(?expression,fn:arg1,?this) AS ?newValue) .
+									BIND (ksfun:apply(fn:object(?context,mapping:expression),fn:arg1,?this) AS ?target) .
+								}""";
+                mapping:queryLanguage ksd:KSPARQL
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:targetPredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:expression ;
+                ksd:valueType rdfs:Resource
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:context ;
+                ksd:valueType mapping:ClassMapping
+              ] .			  
+			  
+#
+# RelationClassMapping 
+#
+mapping:RelationshipClassMapping
+      a       owl:Class ;
+      rdfs:subClassOf mapping:Mapping ;
+	  rdfs:label 'RelationshipClassMapping'; 
+	  rdfs:comment 'Mapping transforming a relation expressed as a triple into a Class instance.';
+      mapping:mappingRule
+              [ a       mapping:SPARQLRule ;
+                mapping:body """PREFIX fn:<http://www.knowledgesmarts.com/ontology/functions#>
+								PREFIX ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> 								
+								CONSTRUCT {
+									?target a ?targetType.
+									?target ?srcPredicate ?targetSrc.
+									?target ?destPredicate ?targetDest.									
+								}
+								WHERE {
+									?src ?relationPredicate ?dest .				
+									BIND (ksfun:apply(?expression,fn:arg1,?src, fn:arg2, ?dest) AS ?target ).
+									BIND (ksfun:apply(fn:object(?srcContext,mapping:expression),fn:arg1,?src ) AS ?targetSrc) .
+									BIND (ksfun:apply(fn:object(?destContext,mapping:expression),fn:arg1,?dest) AS ?targetDest) .
+								}""";
+                mapping:queryLanguage ksd:KSPARQL
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:relationPredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+     ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:expression ;
+                ksd:valueType fn:Function
+              ] ;
+	 ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:srcContext ;
+                ksd:valueType mapping:Mapping
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:destContext ;
+                ksd:valueType mapping:Mapping
+              ];
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:srcPredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:destPredicate ;
+                ksd:valueType rdf:Property
+              ];
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:targetType ;
+                ksd:valueType rdfs:Class
+              ] .
+			  
+			  
+#
+# RelationshipPropertyMapping 
+#
+mapping:RelationshipPropertyMapping
+      a       owl:Class ;
+      rdfs:subClassOf mapping:Mapping ;
+	  rdfs:label 'RelationshipPropertyMapping'; 
+	  rdfs:comment 'Mapping created a property to a RelationshipClass instance';
+      mapping:mappingRule
+              [ a       mapping:SPARQLRule ;
+                mapping:body """PREFIX fn:<http://www.knowledgesmarts.com/ontology/functions#>
+								PREFIX ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> 								
+								CONSTRUCT {
+									?target ?targetPredicate ?val;
+								}
+								WHERE {
+									?src ?relationPredicate ?dest .
+									BIND (ksfun:apply(?expression,fn:arg1,?src,fn:arg2,?dest) AS ?val) .
+									BIND (ksfun:apply(fn:object(?context,mapping:expression),fn:arg1,?src,fn:arg2,?dest) AS ?target) .
+								}""";
+                mapping:queryLanguage ksd:KSPARQL
+              ] ;
+			  
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:relationPredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+       ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:expression ;
+                ksd:valueType fn:Function
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:targetPredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+	   ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:context ;
+                ksd:valueType mapping:RelationshipClassMapping
+              ] .
+			  			  
+						  
+#
+# MapMarker mapping
+#						  
+mapping:GeoPointMapping
+      a       owl:Class ;
+      rdfs:subClassOf mapping:Mapping ;
+	  rdfs:label 'SpatialMapping'; 
+	  rdfs:comment 'Mapping transforming a resource to a GeoPointMapping';
+      mapping:mappingRule
+              [ a       mapping:SPARQLRule ;
+                mapping:body """PREFIX fn:		<http://www.knowledgesmarts.com/ontology/functions#>
+								PREFIX ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> 
+								CONSTRUCT {
+									?target a ?targetType.
+								}
+								WHERE {
+									?this a ?sourceType .
+									BIND (ksfun:apply(?expression,fn:arg1,?this) AS ?target ).
+								}""";
+                mapping:queryLanguage ksd:KSPARQL
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:expression ;
+                ksd:valueType fn:Function
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:sourceType ;
+                ksd:valueType rdfs:Class
+              ];
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:targetType ;
+                ksd:valueType rdfs:Class
+              ] ;		  
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:latitudePredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:longitudePredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:srcLatitudePredicate ;
+                ksd:valueType rdf:Property
+              ] ;
+	  ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate mapping:srcLongitudePredicate ;
+                ksd:valueType rdf:Property
+              ].

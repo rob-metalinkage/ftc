@@ -1,0 +1,156 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:h2o="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:hya="http://demo.metalinkage.com.au/def/schema/hy_features/utilities/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:j.1="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:j.2="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:hygw="http://demo.metalinkage.com.au/def/schema/hy_features/subsurface/"
+  xml:base="http://demo.metalinkage.com.au/def/schema/hy_features/atmosphere">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <j.2:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/atmosphere/</j.2:targetNamespace>
+    <basic:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+    <j.1:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.1:xsdEncodingRule>
+    <owl:imports rdf:resource="utilities"/>
+    <j.2:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.0.9</j.2:version>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dornblut</dc:contributor>
+    <owl:imports rdf:resource="subsurface"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+    <j.2:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hyat</j.2:xmlns>
+    <j.2:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hy_atmosphere.xsd</j.2:xsdDocument>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="atmosphere/HY_Precipitation">
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/waterFraction"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_Water_LiquidPhase"/>
+        <rdfs:comment>liquid water particles from precipitation.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/atmosphere</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="atmosphere/HY_HydroMeteor"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hydrometeor consisting of a fall of an ensemble of particles. 
+&lt;i&gt;(Source: precipitation (1992). In International Meteorological Vocabulary / World Meteorological Organization.  Geneva. P1360)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note 1: may be specialised to different forms of precipitation such as rain, drizzle, snow, snow grains, snow pellets, diamond dust, hail and ice pellets. 
+Note 2: not to be confused with the amount of  precipitation measured by means of raingauge, which is a property (rainfall).</rdfs:comment>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/iceFraction"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_Water_SolidPhase"/>
+        <rdfs:comment>solid water particles from precipitation </rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/iceFraction"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/waterFraction"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="atmosphere/HY_HydroMeteor">
+    <rdfs:comment></rdfs:comment>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/atmosphere</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >meteor consisting of an ensemble of liquid or solid water particles falling through or suspended in the atmosphere, blown by the wind from the Earths's surface or deposited on objects on the ground or in the free air. 
+
+&lt;i&gt;(Source: hydrometeor. (1992). In International Meteorological Vocabulary / World Meteorological Organization.  Geneva. H0970)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note: may be specialised to different types of hydrometeors, e.g. precipitation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="utilities/waterFraction">
+    <rdfs:range rdf:resource="utilities/HY_Water_LiquidPhase"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >waterFraction</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/iceFraction">
+    <rdfs:range rdf:resource="utilities/HY_Water_SolidPhase"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iceFraction</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/iceFraction"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_Water_SolidPhase"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.2:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="atmosphere/HY_Precipitation"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>solid water particles from precipitation </rdfs:comment>
+    <j.2:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.2:sequenceNumber>
+  </owl:Axiom>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#asSubClass"/>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/waterFraction"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_Water_LiquidPhase"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.2:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="atmosphere/HY_Precipitation"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>liquid water particles from precipitation.</rdfs:comment>
+    <j.2:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.2:sequenceNumber>
+  </owl:Axiom>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#isProfile"/>
+</rdf:RDF>

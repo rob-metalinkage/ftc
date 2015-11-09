@@ -1,0 +1,4 @@
+files,targetRepos,targetContext,clearTargetContext,tmpRepos,tmpContext,clearTmpContext,postProcFile
+# meta-models - core ontologies and dataset types backed by SIRF API contract
+ftc,%REPOSURI%/ftc
+

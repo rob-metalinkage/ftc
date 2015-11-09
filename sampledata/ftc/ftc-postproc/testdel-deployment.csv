@@ -1,0 +1,2 @@
+files,targetRepos,targetContext,clearTargetContext,tmpRepos,tmpContext,clearTmpContext,postProcFile
+helper.ttl,%REPOSURI%/ftc,http://id.sirf.net/,true,,,,postdeployment-del.csv

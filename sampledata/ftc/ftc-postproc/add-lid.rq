@@ -1,0 +1,20 @@
+query=PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX h2o: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#>
+
+
+CONSTRUCT {
+
+   ?s rdfs:seeAlso ?lid
+ 
+}
+WHERE {
+
+GRAPH ?g {
+
+  ?s rdfs:subClassOf h2o:FeatureType }
+
+  BIND ( URI( CONCAT( STR(?s), "?_view=alternates")) as ?lid ) 
+ 
+}

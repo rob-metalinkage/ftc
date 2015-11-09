@@ -1,0 +1,48 @@
+query=PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
+
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+
+PREFIX mapping:  <http://csiro.au/hollowWorld/classmaps/20130208/mappingModel#> 
+PREFIX h2o: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#>
+PREFIX gml: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#> 
+
+CONSTRUCT {
+   ?s skos:mappingRelation ?m .
+   ?m  	 a mapping:Entry .
+   ?m mapping:gmlObjectElement ?gmlelement .
+   ?m mapping:gmlPropertyType  ?gmlpropertytype .
+   ?m  mapping:gmlType ?gmltype .
+    ?m   mapping:umlClass ?classname .
+
+ 
+}
+
+WHERE {
+
+ 	{
+	 ?s rdfs:subClassOf h2o:FeatureType .
+ 
+	} UNION 
+	{
+	 ?s rdfs:subClassOf h2o:DataType .
+	}
+	UNION
+	{
+	 ?s rdfs:subClassOf h2o:Union .
+	}
+		UNION
+	{
+	 ?s rdfs:subClassOf gml:Type .
+	}
+	FILTER NOT EXISTS { ?s skos:mappingRelation ?em } . 
+  ?s rdfs:label ?classname .
+  BIND (URI(concat(STR(?s) , "_GMLMAPPING" )) AS ?m ) .
+  BIND (concat(STR(?s) , "Type" ) AS ?gmltype ) .
+   BIND (concat(STR(?s) , "PropertyType" ) AS ?gmlpropertytype ) .
+  BIND ((STR(?s) ) AS ?gmlelement ). 
+
+
+}

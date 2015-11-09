@@ -1,0 +1,17 @@
+files,targetRepos,targetContext,clearTargetContext,tmpRepos,tmpContext,clearTmpContext,postProcFile
+#
+# Geofabric models
+AHGF_HR_Catchments.rdf,%REPOSURI%/ftc,http://pid.ereefs.info/def/schema/ahgf/HR_Catchments,true,,,,none
+# 
+# HY_Features models
+#
+abstracthydrofeature.rdf,%REPOSURI%/ftc,http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature,true,,,,none
+utilities.rdf,%REPOSURI%/ftc,http://demo.metalinkage.com.au/def/schema/hy_features/utilities,true,,,,none
+hydrometric.rdf,%REPOSURI%/ftc,http://demo.metalinkage.com.au/def/schema/hy_features/hydrometric,true,,,,none
+surfacefeature.rdf,%REPOSURI%/ftc,http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature,true,,,,none
+subsurface.rdf,%REPOSURI%/ftc,http://demo.metalinkage.com.au/def/schema/hy_features/subsurface,true,,,,none
+atmosphere.rdf,%REPOSURI%/ftc,http://demo.metalinkage.com.au/def/schema/hy_features/atmosphere,true,,,,none
+
+# mappings
+mappings.ttl,%REPOSURI%/ftc,http://pid.ereefs.info/def/ontology/hy/AHGF_mappings,true,,,,none
+HY_features-GeofabCC.ttl,%REPOSURI%/ftc,http://demo.metalinkage.com.au/def/schema/source/HY_HydroFeature-AHGF_HR_Catchments,true,,,,none

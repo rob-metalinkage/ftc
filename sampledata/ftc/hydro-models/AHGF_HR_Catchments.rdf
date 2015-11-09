@@ -1,0 +1,1026 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#"
+    xmlns:j.1="http://pid.ereefs.info/def/schema/ahgf/HR_Catchments/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:j.2="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:j.3="http://NotDefinedYet/OCL/"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.4="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://pid.ereefs.info/def/schema/ahgf/HR_Catchments">
+  <owl:Ontology rdf:about="">
+    <gml:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ahgf_hr_catchments.xsd</gml:xsdDocument>
+    <gml:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/hr_catchments/1.0</gml:targetNamespace>
+    <gml:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0.0</gml:version>
+    <gml:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ahgf_cn</gml:xmlns>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >atk093</dc:contributor>
+    <j.4:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.4:xsdEncodingRule>
+    <j.2:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="HR_Catchments/AHGFNode">
+    <gml:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:noPropertyType>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >what is this for?</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/mapNodeID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/position"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        ></rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/hydroID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/mapNodeID"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/drains"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="HR_Catchments/AHGFContractedCatchment"/>
+        </owl:allValuesFrom>
+        <rdfs:comment></rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <gml:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:isCollection>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        ></rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/conNodeID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        ></rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/aHGFFType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="HR_Catchments/AHGFNetworkNodeType"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/conLevel"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Comments</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/textNote"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/conNodeID"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://pid.ereefs.info/def/schema/ahgf/HR_Catchments</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >id of next downstream node (this may change as network is densified)</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/nextDownID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/textNote"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/hydroID"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:hasOCLConstraint>
+      <owl:NamedIndividual rdf:about="HR_Catchments/AHGFNode/constraints0">
+        <j.3:oclNote>drains.conNodeID=conNodeID</j.3:oclNote>
+        <j.3:oclRule></j.3:oclRule>
+        <rdf:type rdf:resource="http://NotDefinedYet/OCL/OCLConstraint"/>
+      </owl:NamedIndividual>
+    </j.3:hasOCLConstraint>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/nextDownID"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Position in geometric network</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/position"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <gml:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:byValuePropertyType>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/aHGFFType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Confidence Level</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/conLevel"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="HR_Catchments/AHGFNetworkLinkType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://pid.ereefs.info/def/schema/ahgf/HR_Catchments</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Surface water geoschematic link (terrain based).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Curve"/>
+  <owl:Class rdf:about="HR_Catchments/AHGFContractedCatchment">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/hydroID"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >node ID of contracted node</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/conNodeID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >code to allow sub-typing depending on heuristics of catchment determination.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/aHGFFType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="HR_Catchments/AHGFContractedCatchmentType"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Provides the delineated catchment boundary based on aggregation of the underlying AHGF_SH_Network (DEM -derived) network. These boundaries will be updated as better data is available, but node identifiers will not.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/shape"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#GM_MultiSurface"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <gml:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:noPropertyType>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >what is this?</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/hydroID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <gml:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:isCollection>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:hasOCLConstraint>
+      <owl:NamedIndividual rdf:about="HR_Catchments/AHGFContractedCatchment/constraints1">
+        <j.3:oclNote>conNodeID=outfall.conNodeID</j.3:oclNote>
+        <j.3:oclRule></j.3:oclRule>
+        <rdf:type rdf:resource="http://NotDefinedYet/OCL/OCLConstraint"/>
+      </owl:NamedIndividual>
+    </j.3:hasOCLConstraint>
+    <gml:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:byValuePropertyType>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/shape"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:hasOCLConstraint>
+      <owl:NamedIndividual rdf:about="HR_Catchments/AHGFContractedCatchment/constraints0">
+        <j.3:oclNote>conNodeID=drainedBy.toConNodeId</j.3:oclNote>
+        <j.3:oclRule></j.3:oclRule>
+        <rdf:type rdf:resource="http://NotDefinedYet/OCL/OCLConstraint"/>
+      </owl:NamedIndividual>
+    </j.3:hasOCLConstraint>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/drainedBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="HR_Catchments/AHGFLink"/>
+        </owl:allValuesFrom>
+        <rdfs:comment></rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/conNodeID"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/aHGFFType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://pid.ereefs.info/def/schema/ahgf/HR_Catchments</rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:Class rdf:about="HR_Catchments/AHGFNetworkNodeType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://pid.ereefs.info/def/schema/ahgf/HR_Catchments</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Node types derived from network (terrain based) streams.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="HR_Catchments/AHGFLink">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        ></rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/flowDir"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://Unknown/relatedclass/HydroFlowDirections"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#FeatureType"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/shape"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/toConNodeID"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/hydroID"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <gml:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:noPropertyType>
+    <gml:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:byValuePropertyType>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Identifier of node at start of link</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/fromConNodeID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/flowDir"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/fromNode"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="HR_Catchments/AHGFNode"/>
+        <rdfs:comment></rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/fromConNodeID"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/toNode"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="HR_Catchments/AHGFNode"/>
+        <rdfs:comment></rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:hasOCLConstraint>
+      <owl:NamedIndividual rdf:about="HR_Catchments/AHGFLink/constraints1">
+        <j.3:oclNote>toConNodeID=toNode.conNodeID</j.3:oclNote>
+        <j.3:oclRule></j.3:oclRule>
+        <rdf:type rdf:resource="http://NotDefinedYet/OCL/OCLConstraint"/>
+      </owl:NamedIndividual>
+    </j.3:hasOCLConstraint>
+    <gml:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:isCollection>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://pid.ereefs.info/def/schema/ahgf/HR_Catchments</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        ></rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/hydroID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Identifier of node at end of link</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/toConNodeID"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:hasOCLConstraint>
+      <owl:NamedIndividual rdf:about="HR_Catchments/AHGFLink/constraints0">
+        <j.3:oclNote>fromConNodeID=fromNode.conNodeID</j.3:oclNote>
+        <j.3:oclRule></j.3:oclRule>
+        <rdf:type rdf:resource="http://NotDefinedYet/OCL/OCLConstraint"/>
+      </owl:NamedIndividual>
+    </j.3:hasOCLConstraint>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        ></rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="HR_Catchments/shape"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Curve"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+  </owl:Class>
+  <owl:Class rdf:about="HR_Catchments/AHGFContractedCatchmentType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://pid.ereefs.info/def/schema/ahgf/HR_Catchments</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Types of contracted catchment areas.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="HR_Catchments/fromConNodeID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fromConNodeID</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/conLevel">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >conLevel</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/drains">
+    <rdfs:range rdf:resource="HR_Catchments/AHGFContractedCatchment"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >drains</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/toConNodeID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >toConNodeID</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/aHGFFType">
+    <rdfs:range rdf:parseType="Resource">
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="HR_Catchments/AHGFContractedCatchmentType"/>
+        <owl:Class rdf:about="HR_Catchments/AHGFNetworkNodeType"/>
+      </owl:unionOf>
+    </rdfs:range>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AHGFFType</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/textNote">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >textNote</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/drainedBy">
+    <rdfs:range rdf:resource="HR_Catchments/AHGFLink"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >drainedBy</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/mapNodeID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mapNodeID</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/fromNode">
+    <rdfs:range rdf:resource="HR_Catchments/AHGFNode"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fromNode</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/nextDownID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nextDownID</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/flowDir">
+    <rdfs:range rdf:resource="http://Unknown/relatedclass/HydroFlowDirections"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flowDir</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/shape">
+    <rdfs:range rdf:parseType="Resource">
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#GM_MultiSurface"/>
+        <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Curve"/>
+      </owl:unionOf>
+    </rdfs:range>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shape</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/position">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >position</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/toNode">
+    <rdfs:range rdf:resource="HR_Catchments/AHGFNode"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >toNode</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/hydroID">
+    <rdfs:range rdf:parseType="Resource">
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+        <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:unionOf>
+    </rdfs:range>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hydroID</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="HR_Catchments/conNodeID">
+    <rdfs:range rdf:parseType="Resource">
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+        <owl:Class rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:unionOf>
+    </rdfs:range>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >conNodeID</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/drainedBy"/>
+        <owl:allValuesFrom rdf:resource="HR_Catchments/AHGFLink"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >byReference</gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFContractedCatchment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment></rdfs:comment>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >5</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/aHGFFType"/>
+        <owl:allValuesFrom rdf:resource="HR_Catchments/AHGFNetworkNodeType"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#asSubClass"/>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/conNodeID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFContractedCatchment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/flowDir"/>
+        <owl:allValuesFrom rdf:resource="http://Unknown/relatedclass/HydroFlowDirections"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFLink"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/fromNode"/>
+        <owl:allValuesFrom rdf:resource="HR_Catchments/AHGFNode"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFLink"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment></rdfs:comment>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >7</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/textNote"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >8</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/hydroID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFLink"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</gml:sequenceNumber>
+  </owl:Axiom>
+  <j.1:AHGFNetworkNodeType rdf:about="HR_Catchments/networkArtificialNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkArtificialNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/toConNodeID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFLink"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</gml:sequenceNumber>
+  </owl:Axiom>
+  <j.1:AHGFContractedCatchmentType rdf:about="HR_Catchments/contractedArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >contractedArea</rdfs:label>
+  </j.1:AHGFContractedCatchmentType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/position"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >7</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/conNodeID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</gml:sequenceNumber>
+  </owl:Axiom>
+  <j.1:AHGFNetworkNodeType rdf:about="HR_Catchments/networkGhostNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkGhostNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/hydroID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFContractedCatchment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#isProfile"/>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/mapNodeID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >5</gml:sequenceNumber>
+  </owl:Axiom>
+  <j.1:AHGFNetworkNodeType rdf:about="HR_Catchments/networkWaterAreaNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkWaterAreaNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/shape"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Curve"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFLink"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >5</gml:sequenceNumber>
+  </owl:Axiom>
+  <j.1:AHGFNetworkNodeType rdf:about="HR_Catchments/networkCliffNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkCliffNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFNetworkLinkType rdf:about="HR_Catchments/networkLink">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkLink</rdfs:label>
+  </j.1:AHGFNetworkLinkType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/conLevel"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</gml:sequenceNumber>
+  </owl:Axiom>
+  <j.1:AHGFNetworkNodeType rdf:about="HR_Catchments/networkTerminusNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkTerminusNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFContractedCatchmentType rdf:about="HR_Catchments/noFlowArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >noFlowArea</rdfs:label>
+  </j.1:AHGFContractedCatchmentType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/aHGFFType"/>
+        <owl:allValuesFrom rdf:resource="HR_Catchments/AHGFContractedCatchmentType"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFContractedCatchment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/drains"/>
+        <owl:allValuesFrom rdf:resource="HR_Catchments/AHGFContractedCatchment"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >byReference</gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment></rdfs:comment>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >9</gml:sequenceNumber>
+  </owl:Axiom>
+  <j.1:AHGFNetworkNodeType rdf:about="HR_Catchments/networkHeadNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkHeadNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/nextDownID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >6</gml:sequenceNumber>
+  </owl:Axiom>
+  <j.1:AHGFContractedCatchmentType rdf:about="HR_Catchments/nonContractedArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nonContractedArea</rdfs:label>
+  </j.1:AHGFContractedCatchmentType>
+  <j.1:AHGFNetworkNodeType rdf:about="HR_Catchments/networkJunctionNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkJunctionNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/toNode"/>
+        <owl:allValuesFrom rdf:resource="HR_Catchments/AHGFNode"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFLink"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment></rdfs:comment>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >6</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/shape"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#GM_MultiSurface"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFContractedCatchment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/hydroID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFNode"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</gml:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="HR_Catchments/fromConNodeID"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <gml:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</gml:nillable>
+    <gml:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="HR_Catchments/AHGFLink"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <gml:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</gml:sequenceNumber>
+  </owl:Axiom>
+</rdf:RDF>

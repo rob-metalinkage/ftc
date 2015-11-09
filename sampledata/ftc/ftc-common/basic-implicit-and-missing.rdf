@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY gml "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#" >
+    <!ENTITY h2o "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#" >
+]>
+
+<rdf:RDF
+    xmlns="http://example.org/implicit/properties#"
+    xmlns:h2o="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xml:base="http://example.org/implicit/properties">
+
+  <owl:Ontology rdf:about="http://example.org/implicit/properties">
+    <!-- Metadata and tagged values -->
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+  </owl:Ontology>
+
+  <owl:datatypeProperty rdf:about="&gml;id">
+    	<rdfs:label>gml-id</rdfs:label>
+    <rdfs:range rdf:datatype="&xsd;string"/>
+  </owl:datatypeProperty>
+
+  <owl:objectProperty rdf:about="&gml;name">
+  	<rdfs:label>gml-name</rdfs:label>
+    <rdfs:range rdf:resource="&h2o;GenericName"/>
+  </owl:objectProperty>
+
+  <owl:datatypeProperty rdf:about="&gml;description">
+    	<rdfs:label>gml-description</rdfs:label>
+    <rdfs:range rdf:datatype="&xsd;string"/>
+  </owl:datatypeProperty>
+
+  <owl:datatypeProperty rdf:about="&h2o;codespace">
+    	<rdfs:label>attr-codespace</rdfs:label>
+    <rdfs:range rdf:datatype="&xsd;string"/>
+  </owl:datatypeProperty>
+
+  <owl:datatypeProperty rdf:about="&h2o;localName">
+    	<rdfs:label>localName</rdfs:label>
+    <rdfs:range rdf:datatype="&xsd;string"/>
+  </owl:datatypeProperty>
+
+  <owl:Class rdf:about="&h2o;GenericName">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+	<owl:onProperty rdf:resource="&h2o;codespace"/>
+        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+	<owl:onProperty rdf:resource="&h2o;localName"/>
+        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="&h2o;FeatureType">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&gml;id"/>
+        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&gml;name"/>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&gml;description"/>
+        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+
+  <owl:Class rdf:about="&gml;Type">
+      <h2o:isStereotype rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</h2o:isStereotype>
+     <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&gml;name"/>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="&gml;description"/>
+        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+</rdf:RDF>
+

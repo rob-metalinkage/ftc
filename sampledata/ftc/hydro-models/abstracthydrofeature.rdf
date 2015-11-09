@@ -1,0 +1,2425 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:j.1="http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:h2o="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:j.2="http://NotDefinedYet/OCL/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:hyu="http://demo.metalinkage.com.au/def/schema/hy_features/utilities/"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:j.3="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:j.4="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature">
+  <owl:Ontology rdf:about="">
+    <j.4:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hy_abstract.xsd</j.4:xsdDocument>
+    <j.4:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hya</j.4:xmlns>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry"/>
+    <j.3:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.3:xsdEncodingRule>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata"/>
+    <owl:imports rdf:resource="utilities"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19111/2007/crs"/>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rob Atkinson</dc:contributor>
+    <j.4:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.0.9</j.4:version>
+    <basic:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+    <j.4:targetNamepsace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/</j.4:targetNamepsace>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Watershed">
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/outfall"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >summit or boundary line separating adjacent drainage basins. 
+&lt;i&gt;(Source: divide. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0350EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/outfall"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_Outfall"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>lowest point on the summit or boundary line.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <j.2:hasOCLConstraint>
+      <owl:NamedIndividual rdf:about="abstracthydrofeature/HY_Watershed/constraints0">
+        <j.2:oclNote>HY_CatchmentRepresentation.representedCatchment:HY_Basin</j.2:oclNote>
+        <j.2:oclRule></j.2:oclRule>
+        <rdf:type rdf:resource="http://NotDefinedYet/OCL/OCLConstraint"/>
+      </owl:NamedIndividual>
+    </j.2:hasOCLConstraint>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="abstracthydrofeature/HY_CatchmentBoundary"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_HydroFeature">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/context"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_HydroFeatureContext"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>context wherein the hydro feature characteristics are assigned.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >abstraction of the hydrology phenomenon. depending on application and scale, hydrologic features may be multiple and differently represented in the real world.
+
+&lt;b&gt;hydroFeature&lt;/b&gt; refers to waters above and below the land surfaces of the Earth, whose occurrence, circulation and distribution in time and space, whose biological, chemical and physical properties, and whose reaction with the environment is object of scientific interest.
+&lt;i&gt;(Source: hydrology. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0623EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >External identifier of the object.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/identifier"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_IdentificationCode"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/name"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_HydroFeatureName"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>name given to the hydrologic feature in cultural, political or historical context.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Reservoir">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >body of water, either natural or man-made, used for storage, regulation and control of water resources. 
+
+&lt;i&gt;(Source: reservoir. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1011EN.HTM)&lt;/i&gt;
+
+Note 1: this refers to surface and subsurface water; special concepts of surface or underground reservoirs may be defined with application. 
+Note 2:  do not confuse underground reservoir with groundwater reservoir which refers to the containing aquifer.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_RelativePositionDescription">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >list of general terms commonly used in hydrology to describe a spatial relation between two points.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_CatchmentArea">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="abstracthydrofeature/HY_CatchmentRepresentation"/>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >delineated surface area representing a catchment.  the geometric representation of the catchment area needs to  be defined with the application.
+
+Note: This class allows a simple polygon representation of a catchment.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Water_SolidPhase">
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/coveredWaterBody"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_WaterBodySegment"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>body of open water covered by a layer of ice or snow.
+</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/snowmelt"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >solid form of water. 
+&lt;i&gt;(Source: ice. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0639EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/snowmelt"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_Water_LiquidPhase"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>liquid water from melting of snow. </rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:isCollection>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:noPropertyType>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/accumulatingGlacier"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_Glacier"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>glacier wherein ice particles are accumulated.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:byValuePropertyType>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_LongitudinalSection">
+    <j.4:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:isCollection>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/longitudinalSectionPoint"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_ReferencePoint"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>point on the longitudinal section referenced by coordinates, e.g. point at the stream centre line</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:noPropertyType>
+    <j.4:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:byValuePropertyType>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vertical section of an object along a channel at its centre line. - the geometric representation (plane or space curves, polygon) may vary with application and needs to be defined there.
+
+e.g. stream centre line:=line connecting the successive centres of cross sections of a stream. 
+
+e.g. stream line:=line envelope of the tangents to the instantaneous flow direction at a given time
+
+e.g. thalweg:=line following the deepest part of a streambed or channel or of a valley
+
+e.g. shore line/bank line:=line of intersection of a water body with the rising land   
+
+not to be confused with:
+path line syn. flow line:=curve described by a moving particle of water</rdfs:comment>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_CrossSection">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/crossSectionPoint"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_ReferencePoint"/>
+        </owl:allValuesFrom>
+        <rdfs:comment></rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/upstreamCrossSection"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_CrossSection"/>
+        <rdfs:comment>cross section immediately upstream of the cross section.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vertical section of an object at right angles to the main (average) direction of flow. - the geometric representation (plane or space curves, polygon) may vary with application and needs to be defined there.
+
+e.g. stream cross section (blue):=section of a stream at right angles to the main (average) direction of flow.
+
+e.g. transversal bed profile:=transversal shape of a stream bed in a vertical plane.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_RiverMileageCS">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/axis"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_MileageSystemAxis"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>upstream or downstream directed axis. </rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >linear coordinate system used to represent arbitrary water observation points along a stream. origin of the CS is position of the relevant point feature. coordinates are provided as distance (length) upstream or downstream from this origin (e.g. water monitoring point) to a reference point 
+
+Note: This type uses ISO19111::Referencing by coordinates.CS_LinearCS, shall support one axis</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Outfall">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/position"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_IndirectPosition"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>position of outfall in the hydrographic network relative to a point referenced by coordinates.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/receivingBasin"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_Basin"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>basin which receives water over the identified inflow node. identifies the basin as the link between the inflow and the outflow nodes.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/outflowNode"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/position"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/outflowNode"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Outfall"/>
+        <rdfs:comment>location served as the node where water flows out of the contributing basin.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >topological concept that considers an arbitrary location as the outfall of a corresponding basin. 
+
+Note 1: Outfall represents a logic place and may not have an explicit location. This may be a fixed landmark, a station, or the location where groundwater enters the surface, but also a point projected onto the surface or created from the merger of disjoint locations. Examples: vertically arranged points may be aggregated and projected onto surface. a delta of a river system may be logically merged to a point located at the mouth, diffuse groundwater discharge may be focused into springs, rivers or lakes.   
+
+Note 2: Outfall has no  explicit geometry. Depending on the application the shape may be a point, line, area, etc. and needs to be defined with application.
+
+Note 3: For waters flowing due to gravitational forces the outfall coincides with the lowest point on the summit line bounding the corresponding basin. </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_HydroFeatureName">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >identifier, whether the name is a variant spelling or not. False = preferred name in specified language</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/variantSpelling"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/namesPart"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >identifier, whether the name applies to a part of feature only or not. </rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/namesPart"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >localised name for all or part of a hydrologic feature. 
+
+This is a model with rich optional metadata to handle issues of cultural, political and historical variability that may occur with trans-boundary features.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/source"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/preferredBy"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="utilities/EXT_LocalisedName">
+        <rdfs:comment></rdfs:comment>
+      </rdf:Description>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#DataType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >specifies that this name is the preferred name according to the named entity.
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/preferredBy"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/variantSpelling"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >source of the name identifying its origin.
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/source"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_MileageSystemAxis">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >smallest unit of division on the mileage system axis.
+&lt;i&gt;(Source: precision. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0937EN.HTM)&lt;/i&gt;
+
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/precision"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Distance"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="http://def.seegrid.csiro.au/isotc211/iso19111/2007/crs/CS_CoordinateSystemAxis">
+        <rdfs:comment></rdfs:comment>
+      </rdf:Description>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/precision"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >axis of the mileage system applied.
+
+Note: This type uses ISO19111::Referencing by coordinates.CS_CoordinateSystemAxis - added for information about precision (resolution) of the axis  applied for mileage.</rdfs:comment>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_DistanceToRefPoint">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >distance value expressed as length, incl. unit of lenght applied.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/distanceValue"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Length"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/distanceValue"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >statement whether the distance value agrees with the value accepted as being true. (statement in the sense of exact, greater than or less than the value accepted as being true) .
+Note: This statement assumes that all known corrections have been applied.
+Examples: exact / greater than / less.
+&lt;i&gt;(Source: Accuracy of hydrological measurements (2008). In: WMO Guide to Hydrological Practices. 6th ed. (2008). Chapter 2.3. WMO; 168)&lt;/i&gt;
+
+Note: DQ_PositionalAccuracy is not applicable because of the fact that both types of result (conformance and quantititive result) don't meet the statement in the sense of exact, greater than or less than the expected value.
+
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/accuracyStatement"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/accuracyStatement"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >distance to a reference point including indication of accuracy (closeness to the true value) and precision (smallest unit of length) 
+&lt;i&gt;(Source: station description. (2008). In: WMO Guide to Hydrological Practices. 6th ed. (2008). Chapter 2.5.2: Station identification. WMO; 168)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note: Accuracy has to do with quality of measurement, precision has to do with the spatial resolution of the reported measurement.</rdfs:comment>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >smallest unit of division on the scale of measurement.
+&lt;i&gt;(Source: Accuracy of hydrological measurements (2008). In: WMO Guide to Hydrological Practices. 6th ed. (2008). Chapter 2.3. WMO; 168)&lt;/i&gt;</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/precisionStatement"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/precisionStatement"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_WaterBody">
+    <rdfs:subClassOf rdf:resource="abstracthydrofeature/HY_HydroFeature"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mass of water (liquid) distinct from other masses of water. 
+&lt;i&gt;(Source: water body. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1356EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note 1: refers to real-world objects accumulating liquid water above, on and below the land surface, or a fiction of these. 
+Note 2: water bodies have names within common experience, but may have different names in different contexts.
+Note 3: shape of a water body is determined by the containing object: the occupied landform, the hosting hydrogeologic unit, a manmade container, etc.
+Note 4: extent of an open water body is bound to atmospheric pressure exerted on its surface.
+Note 5: in the context of observation the water body is the intended object of hydrologic observation, i.e. sampled feature.  </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_BasinAggregate">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="abstracthydrofeature/HY_Catchment"/>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >highest level hierarchy containing the network of basins, a set of discrete upper-level systems that are hydrologically discrete. Typically, this will be a river system flowing into a sea or an internal sink. </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_FlowPath">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:isCollection>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flowpath, described by a moving particle of water, representing a catchment. the geometric representation of the flowpath needs to  be defined with the application.
+
+Note: This class allows a straight line representation of a catchment.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="abstracthydrofeature/HY_CatchmentRepresentation"/>
+    </rdfs:subClassOf>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <j.4:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:byValuePropertyType>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <j.4:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:noPropertyType>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_IndirectPosition">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/relativePosition"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/mileageCS"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >distance to the identified reference point. In case of a direct position (when coordinates are known) the distance to the reference point equals to 0.00. </rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/distanceToRefPoint"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_DistanceToRefPoint"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >position relative to the identified reference point.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/relativePosition"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_RelativePosition"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/referencePoint"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_ReferencePoint"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>point fixed and referenced by coordinates.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/mileageCS"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_RiverMileageCS"/>
+        <rdfs:comment>mileage coordinate system used.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >indirect position, either expressed as the distance to a reference point or as position relative to a reference point or the distance to this.  </rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/distanceToRefPoint"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Network">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="abstracthydrofeature/HY_CatchmentRepresentation"/>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >network structure (topology) representing a catchment. Example: hydrographic network representing a basin. the geometric representation of the network needs to  be defined with the application.
+
+Note: network refers to the linkage of features using a connecting system like a channel network (drainage pattern), a system of connected aquifers, a technical water distribution system, or a system of logically connected hydrometric stations.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Water_LiquidPhase">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/accumulatingWaterBody"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_WaterBodyStratum"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>water body (stratum) wherein liquid water is accumulated.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >liquid phase of a chemical compound consisting of approximately two parts by weight of hydrogen and 16 parts by weight of oxygen. 
+&lt;i&gt;(Source: water. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1353EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note 1: this refers to the material having no extent and no shape
+
+Note 2: depending on application HY_Water(LiquidPhase) may be specialised, e.g. for surface water, groundwater, soil water, soil moisture, gravitational water, etc. </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_WaterBodySegment">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/streamLongitudinalSection"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_LongitudinalSection"/>
+        <rdfs:comment>vertical section of (a stream) along a channel at its centre line, e.g. stream centre line.
+(Source: longitudinal section. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0753EN.HTM)</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >segment of a water body (mass of water). </rdfs:comment>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/downstreamSegment"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+        <rdfs:comment>immediately downstream segment connected to the relevant feature segment. 
+</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/fixedLandmark"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_ReferencePoint"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>permanent landmark, fixed and referenced by coordinates
+</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/streamCrossSection"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_CrossSection"/>
+        <rdfs:comment>vertical section of a stream at right angles to the main (average) direction of flow.
+(Source: cross section. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0276EN.HTM)</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="abstracthydrofeature/HY_HydroFeature"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/upstreamSegment"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+        <rdfs:comment>immediately upstream segment connected to the relevant feature segment. </rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_WaterBodyStratum">
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >term from a controlled vocabulary expressing the type of the stratum (layer). </rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/stratumType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:byValuePropertyType>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <j.4:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:isCollection>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >distinct layer within a body of water.
+
+Note: this refers to the vertical stratification within the water body by differences in thermal (thermocline) or salinity (halocline) characteristics or by oxygen or nutrient content (e.g. chemocline). </rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/storage"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Reservoir"/>
+        <rdfs:comment>storage characteristics of the water body participating in the hydrological network. 
+</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:noPropertyType>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_CatchmentRepresentation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/representedCatchment"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="abstracthydrofeature/HY_Catchment"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>catchment multiple represented in the real world.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >representation of a catchment, typically by catchment area, flowpath, boundary line, or a network structure.  
+
+each catchment representation may be realised with an appropriate geometric representation.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</j.0:isAbstract>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/representedCatchment"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_RefPointType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >term identifying a fixed landmark determined as reference point.
+
+
+&lt;b&gt;
+&lt;/b&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Glacier">
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >accumulation of ice of atmospheric origin generally moving slowly on land over a long period. 
+&lt;i&gt;(Source: glacier. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0535EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <j.4:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:isCollection>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf rdf:resource="abstracthydrofeature/HY_HydroFeature"/>
+    <j.4:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:noPropertyType>
+    <j.4:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:byValuePropertyType>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_CatchmentBoundary">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="abstracthydrofeature/HY_CatchmentRepresentation"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >boundary (line) representing a catchment. Example: watershed representing a basin. the geometric representation of the catchment boundary needs to  be defined with the application.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Basin">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/code"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >special, hydrologically determined  catchment whose waters, surface and subsurface waters, are flowing to a common outlet caused either by gravity or by pumping. 
+
+a basin may have one identified inflow, multiple inflows into a basin may be described by aggregation of basins into an encompassing, aggregate basin. 
+
+identified upstream basins of the basin may be described using the upstreamBasin  relation.
+
+Note 1: this concept requires a stable identifier that is not merely a function of an arbitrary delineation of the surface, and that basins are delineated within a simple hierarchy (tree structure). More complex structures can be described as representations using  HY_Network Representation pattern.
+
+Note 2: this concept provides an explicit model of a link between the identified inflow (inflowNode) and the common outlet (outflowNode) of a basin. 
+
+Note 3: the concept refers to the continuous interaction of surface and subsurface waters within the basin. if required, drainage basin and groundwaterbasin may be differentiated with the application. </rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/outflowNode"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Outfall"/>
+        <rdfs:comment>location served as the node where water flows out of the contributing basin.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/receivingBasin"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Basin"/>
+        <rdfs:comment>basin which receives water over the identified inflow node. identifies the basin as the link between the inflow and the outflow nodes.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >unique identifier of a basin in a classification or coding system.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/code"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="abstracthydrofeature/HY_Catchment"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/outflowNode"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/upstreamBasin"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Basin"/>
+        <rdfs:comment>basin located immediately upstream of the actual basin. 
+Note: this defines the topological hierarchy between basins. the nesting is inherited from the catchment class.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_RelativePosition">
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >positive value, expressing the distance to a reference point as percentage of the total distance between two reference points.
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/percentage"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/percentage"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/description"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >term, providing a verbal description  of the spatial relationship to a reference point.
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/description"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_RelativePositionDescription"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >relative position, expressed as percentage of the total distance to the reference point, or as a verbal description of the spatial relationship to a reference point.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_HydrographicNetwork">
+    <rdfs:subClassOf rdf:resource="abstracthydrofeature/HY_Network"/>
+    <j.2:hasOCLConstraint>
+      <owl:NamedIndividual rdf:about="abstracthydrofeature/HY_HydrographicNetwork/constraints0">
+        <j.2:oclNote>HY_CatchmentRepresentation.representedCatchment:HY_Basin</j.2:oclNote>
+        <j.2:oclRule></j.2:oclRule>
+        <rdf:type rdf:resource="http://NotDefinedYet/OCL/OCLConstraint"/>
+      </owl:NamedIndividual>
+    </j.2:hasOCLConstraint>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >aggregate of rivers and other permanent or temporary watercourses, and also lakes and reservoirs, over any given area.
+&lt;i&gt;(Source: hydrographical network. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0363EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note: Not to be confused with the hydrometric network of  hydrological stations and  observing posts.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_ReferencePoint">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/networkLocation"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >term from a codelist identifying the reference point. 
+
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/refPointType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_RefPointType"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/refPointType"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/networkLocation"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Outfall"/>
+        <rdfs:comment>location of  reference point in the related network of basins.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >accepted location of a reference point, given that a single point may have several reported locations depending on its nature and the precision of measurement. 
+Note: The reference point is the basis for which linear measures within a network may be determined.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/refPoint"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/refPoint"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >permanent, stable reference location point such as a landmark fixed and referenced by coordinates.
+(Source: station description. (2008). In: WMO Guide to Hydrological Practices. 6th ed. (2008). Chapter 2.5.2. WMO; 168)</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_Catchment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/containingCatchment"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >distinct unit wherein hydrologic processes take place. 
+
+a catchment is commonly recognised as the basic unit of study, management or reporting in hydrology. 
+
+a catchment is part of a containing catchment, in a nested or aggregate hierarchy of catchments, as typically used for high order organisation of management and reporting units. 
+
+a catchment may be multiple and differently represented in the real  world.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/containingCatchment"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Catchment"/>
+        <rdfs:comment>containing catchment in a nested hierarchy of catchments.
+
+Note: refers to simple hierarchy of catchments and sub-catchments, as typically used for high order organisation of management and reporting units. </rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="abstracthydrofeature/HY_HydroFeature"/>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+  </owl:Class>
+  <owl:Class rdf:about="abstracthydrofeature/HY_HydroFeatureContext">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >generally applicable characteristics assigned to the hydrologic feature in a spatial, temporal or classification context.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="abstracthydrofeature/context"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_HydroFeatureContext"/>
+        <rdfs:comment>context wherein the hydro feature characteristics are assigned.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/temporalContext"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_TemporalContext"/>
+        <rdfs:comment></rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/classification"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_ClassificationContext"/>
+        <rdfs:comment></rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#DataType"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/spatialContext"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_SpatialContext"/>
+        <rdfs:comment></rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.4:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:gmlProfileSchema>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/containingCatchment">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_Catchment"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >containingCatchment</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/relativePosition">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_RelativePosition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >relativePosition</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/upstreamSegment">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >upstreamSegment</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/downstreamSegment">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >downstreamSegment</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/name">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_HydroFeatureName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >name</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/networkLocation">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_Outfall"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkLocation</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/longitudinalSectionPoint">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >longitudinalSectionPoint</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/spatialContext">
+    <rdfs:range rdf:resource="utilities/EXT_SpatialContext"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spatialContext</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/precision">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Distance"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >precision</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/representedCatchment">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_Catchment"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >representedCatchment</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/distanceValue">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Length"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >distanceValue</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/fixedLandmark">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fixedLandmark</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/accuracyStatement">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >accuracyStatement</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/preferredBy">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >preferredBy</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/referencePoint">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >referencePoint</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/snowmelt">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_Water_LiquidPhase"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >snowmelt</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/outflowNode">
+    <rdfs:range rdf:parseType="Resource">
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="abstracthydrofeature/HY_Outfall"/>
+        <j.1:HY_Outfall/>
+      </owl:unionOf>
+    </rdfs:range>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >outflowNode</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/crossSectionPoint">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >crossSectionPoint</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/description">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_RelativePositionDescription"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >description</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/refPoint">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >refPoint</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/position">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_IndirectPosition"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >position</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/storage">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_Reservoir"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >storage</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/precisionStatement">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >precisionStatement</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/upstreamBasin">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_Basin"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >upstreamBasin</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/outfall">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_Outfall"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >outfall</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/streamCrossSection">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_CrossSection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >streamCrossSection</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/percentage">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >percentage</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/coveredWaterBody">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >coveredWaterBody</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/stratumType">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >stratumType</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/namesPart">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >namesPart</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/upstreamCrossSection">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_CrossSection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >upstreamCrossSection</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/accumulatingWaterBody">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_WaterBodyStratum"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >accumulatingWaterBody</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/receivingBasin">
+    <rdfs:range rdf:parseType="Resource">
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="abstracthydrofeature/HY_Basin"/>
+        <j.1:HY_Basin/>
+      </owl:unionOf>
+    </rdfs:range>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >receivingBasin</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/identifier">
+    <rdfs:range rdf:resource="utilities/EXT_IdentificationCode"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >identifier</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/temporalContext">
+    <rdfs:range rdf:resource="utilities/EXT_TemporalContext"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >temporalContext</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/streamLongitudinalSection">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_LongitudinalSection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >streamLongitudinalSection</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/accumulatingGlacier">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_Glacier"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >accumulatingGlacier</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/classification">
+    <rdfs:range rdf:resource="utilities/EXT_ClassificationContext"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >classification</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/axis">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_MileageSystemAxis"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >axis</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/distanceToRefPoint">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_DistanceToRefPoint"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >distanceToRefPoint</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/refPointType">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_RefPointType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >refPointType</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/mileageCS">
+    <rdfs:range rdf:resource="abstracthydrofeature/HY_RiverMileageCS"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mileageCS</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/code">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >code</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/context">
+    <rdfs:range rdf:parseType="Resource">
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class rdf:about="abstracthydrofeature/HY_HydroFeatureContext"/>
+        <j.1:HY_HydroFeatureContext/>
+      </owl:unionOf>
+    </rdfs:range>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >context</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/variantSpelling">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >variantSpelling</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="abstracthydrofeature/source">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >source</rdfs:label>
+    <rdf:type rdf:resource="abstracthydrofeature/HY_RefPointType"/>
+  </owl:ObjectProperty>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/weir">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >weir</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#asSubClass"/>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/fork">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fork</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/axis"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_MileageSystemAxis"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_RiverMileageCS"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>upstream or downstream directed axis. </rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/outlet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >outlet</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/classification"/>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_ClassificationContext"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeatureContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment></rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/bifurcation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bifurcation</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#isProfile"/>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/ponor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ponor</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/context"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_HydroFeatureContext"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeature"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>context wherein the hydro feature characteristics are assigned.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/relativePosition"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_RelativePosition"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_IndirectPosition"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/stratumType"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_WaterBodyStratum"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/snowmelt"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Water_LiquidPhase"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Water_SolidPhase"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>liquid water from melting of snow. </rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RelativePositionDescription rdf:about="abstracthydrofeature/nearby">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nearby</rdfs:label>
+  </j.1:HY_RelativePositionDescription>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/percentage"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_RelativePosition"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/outflowNode"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Outfall"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Basin"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>location served as the node where water flows out of the contributing basin.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RelativePositionDescription rdf:about="abstracthydrofeature/downstream">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >downstream</rdfs:label>
+  </j.1:HY_RelativePositionDescription>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/temporalContext"/>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_TemporalContext"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeatureContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment></rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/referenceClimatologicalStation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >referenceClimatologicalStation</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/code"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Basin"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/rapids">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rapids</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/crossSectionPoint"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_CrossSection"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment></rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/representedCatchment"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Catchment"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_CatchmentRepresentation"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>catchment multiple represented in the real world.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/riverMouth">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >riverMouth</rdfs:label>
+  </j.1:HY_RefPointType>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/dam">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dam</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/referencePoint"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_IndirectPosition"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>point fixed and referenced by coordinates.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/barrage">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >barrage</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/outflowNode"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Outfall"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Outfall"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>location served as the node where water flows out of the contributing basin.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/hydrometricStation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hydrometricStation</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/outfall"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Outfall"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Watershed"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>lowest point on the summit or boundary line.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/confluence">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >confluence</rdfs:label>
+  </j.1:HY_RefPointType>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/spring">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spring</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/containingCatchment"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Catchment"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Catchment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>containing catchment in a nested hierarchy of catchments.
+
+Note: refers to simple hierarchy of catchments and sub-catchments, as typically used for high order organisation of management and reporting units. </rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >5</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/receivingBasin"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Basin"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Basin"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>basin which receives water over the identified inflow node. identifies the basin as the link between the inflow and the outflow nodes.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/accumulatingGlacier"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Glacier"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Water_SolidPhase"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>glacier wherein ice particles are accumulated.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/namesPart"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeatureName"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/downstreamSegment"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>immediately downstream segment connected to the relevant feature segment. 
+</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >6</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/accuracyStatement"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_DistanceToRefPoint"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/refPointType"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_RefPointType"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/accumulatingWaterBody"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_WaterBodyStratum"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Water_LiquidPhase"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>water body (stratum) wherein liquid water is accumulated.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/intake">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >intake</rdfs:label>
+  </j.1:HY_RefPointType>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/waterfall">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >waterfall</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/source"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >byReference</j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeatureName"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RelativePositionDescription rdf:about="abstracthydrofeature/left">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >left</rdfs:label>
+  </j.1:HY_RelativePositionDescription>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/precisionStatement"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_DistanceToRefPoint"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/refPoint"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RelativePositionDescription rdf:about="abstracthydrofeature/upstream">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >upstream</rdfs:label>
+  </j.1:HY_RelativePositionDescription>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/description"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_RelativePositionDescription"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_RelativePosition"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/receivingBasin"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Basin"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Outfall"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>basin which receives water over the identified inflow node. identifies the basin as the link between the inflow and the outflow nodes.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/diversionOfWater">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >diversionOfWater</rdfs:label>
+  </j.1:HY_RefPointType>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/sinkhole">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sinkhole</rdfs:label>
+  </j.1:HY_RefPointType>
+  <j.1:HY_RefPointType rdf:about="abstracthydrofeature/inlet">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >inlet</rdfs:label>
+  </j.1:HY_RefPointType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/precision"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Distance"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_MileageSystemAxis"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RelativePositionDescription rdf:about="abstracthydrofeature/at">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >at</rdfs:label>
+  </j.1:HY_RelativePositionDescription>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/coveredWaterBody"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Water_SolidPhase"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>body of open water covered by a layer of ice or snow.
+</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RelativePositionDescription rdf:about="abstracthydrofeature/right">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >right</rdfs:label>
+  </j.1:HY_RelativePositionDescription>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/preferredBy"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >byReference</j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeatureName"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/storage"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Reservoir"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_WaterBodyStratum"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>storage characteristics of the water body participating in the hydrological network. 
+</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >10</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/distanceValue"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Length"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_DistanceToRefPoint"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/context"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_HydroFeatureContext"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeatureContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>context wherein the hydro feature characteristics are assigned.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/name"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_HydroFeatureName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeature"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>name given to the hydrologic feature in cultural, political or historical context.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/position"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_IndirectPosition"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_Outfall"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>position of outfall in the hydrographic network relative to a point referenced by coordinates.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/mileageCS"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_RiverMileageCS"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_IndirectPosition"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>mileage coordinate system used.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/identifier"/>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_IdentificationCode"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeature"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/networkLocation"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_Outfall"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>location of  reference point in the related network of basins.</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <j.1:HY_RelativePositionDescription rdf:about="abstracthydrofeature/between">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >between</rdfs:label>
+  </j.1:HY_RelativePositionDescription>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/variantSpelling"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeatureName"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/upstreamSegment"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>immediately upstream segment connected to the relevant feature segment. </rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >5</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/spatialContext"/>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_SpatialContext"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_HydroFeatureContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment></rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/distanceToRefPoint"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_DistanceToRefPoint"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.4:nillable>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_IndirectPosition"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.4:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="abstracthydrofeature/fixedLandmark"/>
+        <owl:allValuesFrom rdf:resource="abstracthydrofeature/HY_ReferencePoint"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.4:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.4:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="abstracthydrofeature/HY_WaterBodySegment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>permanent landmark, fixed and referenced by coordinates
+</rdfs:comment>
+    <j.4:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >8</j.4:sequenceNumber>
+  </owl:Axiom>
+</rdf:RDF>

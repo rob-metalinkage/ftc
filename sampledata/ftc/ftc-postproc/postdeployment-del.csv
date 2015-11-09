@@ -1,0 +1,4 @@
+rqInFile,rqContext,rqOutFile,targetContext,clearTargetContext,rqOutFileLoad
+del.rq,,isdefineby.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,true,true
+
+

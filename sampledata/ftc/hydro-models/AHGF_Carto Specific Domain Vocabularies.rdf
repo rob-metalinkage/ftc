@@ -1,0 +1,474 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.1="http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0/"
+    xmlns:j.2="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:j.3="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0">
+  <owl:Ontology rdf:about="">
+    <gml:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shcv</gml:xmlns>
+    <j.2:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.2:xsdEncodingRule>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+    <gml:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0/</gml:targetNamespace>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rob Atkinson</dc:contributor>
+    <gml:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0</gml:version>
+    <gml:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ahgf_sh_carto_vocabs.xsd</gml:xsdDocument>
+    <j.3:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="1.0/AHGFDamType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Water stored behind a constructed barrier (mapped).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFSeaType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFPipelineStatus">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFHydroLineType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFMappedNodeType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFTerrainBreakLineType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFPipelineRelationship">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFSeaName">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFOceanName">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFWaterPipelineType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFStructureType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFHydroPointType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFMappedStreamType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFOtherWaterName">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFCanalLineType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Man-made open channels for water (mapped).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFHydroAreaType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Types of mapped areal water features.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <j.1:AHGFStructureType rdf:about="1.0/lock">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lock</rdfs:label>
+  </j.1:AHGFStructureType>
+  <j.1:AHGFPipelineStatus rdf:about="1.0/operational">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >operational</rdfs:label>
+  </j.1:AHGFPipelineStatus>
+  <j.1:AHGFHydroAreaType rdf:about="1.0/rapidArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rapidArea</rdfs:label>
+  </j.1:AHGFHydroAreaType>
+  <j.1:AHGFHydroPointType rdf:about="1.0/rockhole">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rockhole</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFHydroPointType rdf:about="1.0/bay">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bay</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFMappedStreamType rdf:about="1.0/mappedAtificialFlowSegment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedAtificialFlowSegment</rdfs:label>
+  </j.1:AHGFMappedStreamType>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#asSubClass"/>
+  <j.1:AHGFPipelineRelationship rdf:about="1.0/submerged">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >submerged</rdfs:label>
+  </j.1:AHGFPipelineRelationship>
+  <j.1:AHGFPipelineRelationship rdf:about="1.0/above+Ground">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >above+Ground</rdfs:label>
+  </j.1:AHGFPipelineRelationship>
+  <j.1:AHGFMappedNodeType rdf:about="1.0/mappedCliffNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedCliffNode</rdfs:label>
+  </j.1:AHGFMappedNodeType>
+  <j.1:AHGFSeaName rdf:about="1.0/cORAL+SEA">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cORAL+SEA</rdfs:label>
+  </j.1:AHGFSeaName>
+  <j.1:AHGFSeaName rdf:about="1.0/tIMOR+SEA">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tIMOR+SEA</rdfs:label>
+  </j.1:AHGFSeaName>
+  <j.1:AHGFMappedNodeType rdf:about="1.0/mappedWaterAreaNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedWaterAreaNode</rdfs:label>
+  </j.1:AHGFMappedNodeType>
+  <j.1:AHGFPipelineStatus rdf:about="1.0/proposed">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >proposed</rdfs:label>
+  </j.1:AHGFPipelineStatus>
+  <j.1:AHGFHydroLineType rdf:about="1.0/damWall">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >damWall</rdfs:label>
+  </j.1:AHGFHydroLineType>
+  <j.1:AHGFHydroLineType rdf:about="1.0/shoreline">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shoreline</rdfs:label>
+  </j.1:AHGFHydroLineType>
+  <j.1:AHGFHydroAreaType rdf:about="1.0/foreshoreFlat">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >foreshoreFlat</rdfs:label>
+  </j.1:AHGFHydroAreaType>
+  <j.1:AHGFHydroAreaType rdf:about="1.0/watercourseArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >watercourseArea</rdfs:label>
+  </j.1:AHGFHydroAreaType>
+  <j.1:AHGFMappedNodeType rdf:about="1.0/mappedGhostNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedGhostNode</rdfs:label>
+  </j.1:AHGFMappedNodeType>
+  <j.1:AHGFOtherWaterName rdf:about="1.0/gREAT+BARRIER+REEF">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gREAT+BARRIER+REEF</rdfs:label>
+  </j.1:AHGFOtherWaterName>
+  <j.1:AHGFMappedNodeType rdf:about="1.0/mappedTerminusNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedTerminusNode</rdfs:label>
+  </j.1:AHGFMappedNodeType>
+  <j.1:AHGFMappedStreamType rdf:about="1.0/mappedWaterAreaSegment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedWaterAreaSegment</rdfs:label>
+  </j.1:AHGFMappedStreamType>
+  <j.1:AHGFStructureType rdf:about="1.0/waterfall">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >waterfall</rdfs:label>
+  </j.1:AHGFStructureType>
+  <j.1:AHGFMappedNodeType rdf:about="1.0/mappedArtificialNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedArtificialNode</rdfs:label>
+  </j.1:AHGFMappedNodeType>
+  <j.1:AHGFHydroLineType rdf:about="1.0/tunnel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tunnel</rdfs:label>
+  </j.1:AHGFHydroLineType>
+  <j.1:AHGFOtherWaterName rdf:about="1.0/bASS+STRAIT">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bASS+STRAIT</rdfs:label>
+  </j.1:AHGFOtherWaterName>
+  <j.1:AHGFDamType rdf:about="1.0/dam">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dam</rdfs:label>
+  </j.1:AHGFDamType>
+  <j.1:AHGFHydroPointType rdf:about="1.0/soak">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >soak</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFHydroPointType rdf:about="1.0/nativeWell">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nativeWell</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFStructureType rdf:about="1.0/ford">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ford</rdfs:label>
+  </j.1:AHGFStructureType>
+  <j.1:AHGFSeaName rdf:about="1.0/aRAFURA+SEA">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >aRAFURA+SEA</rdfs:label>
+  </j.1:AHGFSeaName>
+  <j.1:AHGFWaterPipelineType rdf:about="1.0/waterPipeline">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >waterPipeline</rdfs:label>
+  </j.1:AHGFWaterPipelineType>
+  <j.1:AHGFOtherWaterName rdf:about="1.0/gREAT+AUSTRALIAN+BIGHT">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gREAT+AUSTRALIAN+BIGHT</rdfs:label>
+  </j.1:AHGFOtherWaterName>
+  <j.1:AHGFOtherWaterName rdf:about="1.0/gULF+OF+PAPUA">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gULF+OF+PAPUA</rdfs:label>
+  </j.1:AHGFOtherWaterName>
+  <j.1:AHGFHydroLineType rdf:about="1.0/cliffLine">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >cliffLine</rdfs:label>
+  </j.1:AHGFHydroLineType>
+  <j.1:AHGFOceanName rdf:about="1.0/iNDIAN+OCEAN">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iNDIAN+OCEAN</rdfs:label>
+  </j.1:AHGFOceanName>
+  <j.1:AHGFHydroAreaType rdf:about="1.0/pondageArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pondageArea</rdfs:label>
+  </j.1:AHGFHydroAreaType>
+  <j.1:AHGFHydroLineType rdf:about="1.0/spillway">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spillway</rdfs:label>
+  </j.1:AHGFHydroLineType>
+  <j.1:AHGFPipelineStatus rdf:about="1.0/disused">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >disused</rdfs:label>
+  </j.1:AHGFPipelineStatus>
+  <j.1:AHGFOtherWaterName rdf:about="1.0/gULF+OF+CARPENTARIA">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gULF+OF+CARPENTARIA</rdfs:label>
+  </j.1:AHGFOtherWaterName>
+  <j.1:AHGFHydroPointType rdf:about="1.0/waterTank">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >waterTank</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFHydroAreaType rdf:about="1.0/flat">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flat</rdfs:label>
+  </j.1:AHGFHydroAreaType>
+  <j.1:AHGFMappedStreamType rdf:about="1.0/mappedFlowSegment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedFlowSegment</rdfs:label>
+  </j.1:AHGFMappedStreamType>
+  <j.1:AHGFPipelineStatus rdf:about="1.0/under+Construction">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >under+Construction</rdfs:label>
+  </j.1:AHGFPipelineStatus>
+  <j.1:AHGFOtherWaterName rdf:about="1.0/tORRES+STRAIT">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tORRES+STRAIT</rdfs:label>
+  </j.1:AHGFOtherWaterName>
+  <j.1:AHGFHydroPointType rdf:about="1.0/waterhole">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >waterhole</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFHydroLineType rdf:about="1.0/shorelineJunction">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shorelineJunction</rdfs:label>
+  </j.1:AHGFHydroLineType>
+  <j.1:AHGFHydroLineType rdf:about="1.0/rapidLine">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rapidLine</rdfs:label>
+  </j.1:AHGFHydroLineType>
+  <j.1:AHGFHydroLineType rdf:about="1.0/levee">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >levee</rdfs:label>
+  </j.1:AHGFHydroLineType>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#isProfile"/>
+  <j.1:AHGFHydroAreaType rdf:about="1.0/canalArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >canalArea</rdfs:label>
+  </j.1:AHGFHydroAreaType>
+  <j.1:AHGFHydroPointType rdf:about="1.0/pool">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pool</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFSeaType rdf:about="1.0/sea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sea</rdfs:label>
+  </j.1:AHGFSeaType>
+  <j.1:AHGFPipelineRelationship rdf:about="1.0/underground">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >underground</rdfs:label>
+  </j.1:AHGFPipelineRelationship>
+  <j.1:AHGFSeaName rdf:about="1.0/tASMAN+SEA">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >tASMAN+SEA</rdfs:label>
+  </j.1:AHGFSeaName>
+  <j.1:AHGFOtherWaterName rdf:about="1.0/jOSEPH+BONAPARTE+GULF">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jOSEPH+BONAPARTE+GULF</rdfs:label>
+  </j.1:AHGFOtherWaterName>
+  <j.1:AHGFCanalLineType rdf:about="1.0/canalLine">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >canalLine</rdfs:label>
+  </j.1:AHGFCanalLineType>
+  <j.1:AHGFOceanName rdf:about="1.0/sOUTH+PACIFIC+OCEAN">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sOUTH+PACIFIC+OCEAN</rdfs:label>
+  </j.1:AHGFOceanName>
+  <j.1:AHGFOceanName rdf:about="1.0/sOUTHERN+OCEAN">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sOUTHERN+OCEAN</rdfs:label>
+  </j.1:AHGFOceanName>
+  <j.1:AHGFHydroPointType rdf:about="1.0/spring">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spring</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFTerrainBreakLineType rdf:about="1.0/terrainBreakLine">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >terrainBreakLine</rdfs:label>
+  </j.1:AHGFTerrainBreakLineType>
+  <j.1:AHGFStructureType rdf:about="1.0/bridge">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bridge</rdfs:label>
+  </j.1:AHGFStructureType>
+  <j.1:AHGFMappedNodeType rdf:about="1.0/mappedHeadNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedHeadNode</rdfs:label>
+  </j.1:AHGFMappedNodeType>
+  <j.1:AHGFHydroPointType rdf:about="1.0/gnammaHole">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >gnammaHole</rdfs:label>
+  </j.1:AHGFHydroPointType>
+  <j.1:AHGFMappedNodeType rdf:about="1.0/mappedJunctionNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >mappedJunctionNode</rdfs:label>
+  </j.1:AHGFMappedNodeType>
+  <j.1:AHGFPipelineRelationship rdf:about="1.0/elevated">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >elevated</rdfs:label>
+  </j.1:AHGFPipelineRelationship>
+</rdf:RDF>

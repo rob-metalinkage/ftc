@@ -1,0 +1,17 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 4C90-E367
+
+ Directory of C:\repos\UNSDIGaz\vocab\ftc\hydro-models
+
+22/07/2013  03:47 PM    <DIR>          .
+22/07/2013  03:47 PM    <DIR>          ..
+03/06/2013  10:16 AM            49,297 AHGF_HR_Catchments.rdf
+15/07/2013  10:49 AM             1,419 deployment.csv
+22/07/2013  03:47 PM                 0 dir.txt
+04/06/2013  10:25 PM           142,777 HY_HydroFeature.rdf
+04/06/2013  10:25 PM             7,425 HY_HydrometricNetwork.rdf
+04/06/2013  10:25 PM            48,125 HY_SurfaceHydroFeature.rdf
+04/06/2013  10:25 PM            44,532 HY_Utilities.rdf
+11/06/2013  11:36 PM               221 mappings.ttl
+               8 File(s)        293,796 bytes
+               2 Dir(s)  84,799,844,352 bytes free

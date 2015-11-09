@@ -1,0 +1,66 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix :        <http://www.knowledgesmarts.com/functions#> .
+@prefix ks:      <http://www.usersmarts.com/ont/2005/06/ks#> .
+@prefix ksd:     <http://www.usersmarts.com/ont/2007/02/ks/descriptor#> .
+@prefix mapping: <http://www.knowledgesmarts.com/ontologies/mapping#> .
+@prefix ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> .
+@prefix fn:      <http://www.knowledgesmarts.com/functions#> .
+@prefix function:<http://www.knowledgesmarts.com/ontology/functions#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prm:     <http://www.smartrealm.com/ont/ks/param#> .
+
+:targetResource
+      a      function:Function ;
+      rdfs:label "Get the target resource from given mapping (context)" ;
+      rdfs:subClassOf function:Functions ;
+      function:body
+              [ a       ksd:Query ;
+                ksd:body """PREFIX ksfun:<http://www.usersmarts.com/ont/2005/06/ks/functor#>
+							PREFIX fn:<http://www.knowledgesmarts.com/functions#>
+							PREFIX mapping:<http://www.knowledgesmarts.com/ontologies/mapping#>
+							SELECT ?target 
+							WHERE { 
+								BIND (ksfun:apply(fn:object(?context,mapping:expression),function:arg1,?arg1) AS ?target)								
+							}""" ;
+                ksd:language ksd:KSPARQL
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate function:arg1 ;
+                ksd:valueType rdfs:Resource
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate :context ;
+                ksd:valueType mapping:Mapping
+              ] .
+
+			  
+:relatedObjectContext a function:Function;
+      rdfs:label "Get the target resource from given mapping (context)" ;
+      rdfs:subClassOf function:Functions ;
+      function:body
+              [ a       ksd:Query ;
+                ksd:body """PREFIX ksfun:<http://www.usersmarts.com/ont/2005/06/ks/functor#>
+							PREFIX fn:<http://www.knowledgesmarts.com/functions#>
+							PREFIX mapping:<http://www.knowledgesmarts.com/ontologies/mapping#>
+							SELECT ?target 
+							WHERE { 
+							    ?source ?predicate ?object .
+								BIND (fn:targetResource(?object,?context) AS ?target)								
+							}""" ;
+                ksd:language ksd:KSPARQL
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate function:arg1 ;
+                ksd:valueType rdfs:Resource
+              ] ;
+      ksd:hasParameter
+              [ a       ksd:Parameter ;
+                ksd:predicate :context ;
+                ksd:valueType mapping:Mapping
+              ] .			  

@@ -1,0 +1,859 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:h2o="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.1="http://demo.metalinkage.com.au/def/schema/hy_features/utilities/"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:j.2="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:j.3="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://demo.metalinkage.com.au/def/schema/hy_features/utilities">
+  <owl:Ontology rdf:about="">
+    <j.2:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.2:xsdEncodingRule>
+    <j.3:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.0.8</j.3:version>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rob Atkinson</dc:contributor>
+    <basic:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <j.3:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities/</j.3:targetNamespace>
+    <j.3:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hy_utilities.xsd</j.3:xsdDocument>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <j.3:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hyu</j.3:xmlns>
+  </owl:Ontology>
+  <owl:Class rdf:about="utilities/EXT_SpatialContext">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >domain within which a spatial context is described.
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/domain"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >controlled vocabulary term from a related domain characterising the spatial context of the source feature, e.g. country.
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/spatialContextDescriptor"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/overlapsCount"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >information about the source feature describing the interaction with a target spatial feature. This characterisation may be specialised to simplify the nature of this information, such as a single numeric value. 
+
+Examples: number of countries (or admin unit) in catchment, soil types in catchment, wmo-subregion in catchment. </rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >identifier from related domain specifying the related source feature.
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/relatedFeatureType"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >number of specified features in the target domain that the source feature overlaps.
+
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/overlapsCount"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/relatedFeatureType"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/domain"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/spatialContextDescriptor"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_UsageType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >term indicating the type of name usage.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_IdentificationCode">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This type is equivalent to ISO19115-1(draft)::Metadatainformation::MD_Identifier - but we do not want to import the 19115 metadata model for this single concept. (ISO 19115 has circular dependencies and is not safe to use as a conceptual model.) </rdfs:comment>
+    <j.3:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:noPropertyType>
+    <j.3:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:isCollection>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#DataType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_ClassificationContext">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >controlled vocabulary term expressing the upper-level topic or theme the related classification system refers to.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/topic"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/class"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/topic"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/classification"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >controlled vocabulary term assigned to a feature or a feature property expressing the position or rank in a classification system.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/class"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >information about the classification used to arrange a feature or feature property according to established criteria.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >name of the related classification system</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/classification"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#GenericName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_LocalisedName">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >information about a name whose use is bound to a locale.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/usage"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >controlled vocabulary term expressing the mode of usage in a specific community.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/usage"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_UsageType"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/transliteration"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >ISO standards used for romanisation, transcription or transliteration of characters of another alphabet into Latin characters. </rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/transliteration"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="utilities/EXT_TransliterationStandardCode"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/name"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >individual name used in a country or region under the conditions of nation and language.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/name"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_KeywordRole">
+    <j.3:asDictionary rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</j.3:asDictionary>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Extensible by domain, so empty. 
+Note:  this avoids the anti-pattern in the ISO 19115 Codelists pre-populated with semi-complete lists.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_LocalisedCharacterString">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This type is equivalent to ISO19139::Cultural and linguistic adaptability:: LocalizedCharacterString - but we dont want to import the 19139 metadata model for this single concept. (ISO 19139 Cultural and linguistic adapdability, informative package)</rdfs:comment>
+    <j.3:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:noPropertyType>
+    <j.3:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:isCollection>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#DataType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_TemporalContext">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >identifier, whether a feature characteristic applies or not.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/statusIdentifier"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/temporalContextDescriptor"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >temporal extent of the feature. </rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/extent"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal#Period"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/statusIdentifier"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/extent"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >information about the source feature describing the existence or behaviour in time. This characterisation may be specialised to simplify the nature of this information, such as a single numeric value. 
+
+Examples: lifespan, permanence</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >controlled vocabulary term characterising the temporal context of the source feature, e.g. lifespan.
+</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/temporalContextDescriptor"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_MultilingualKeyword">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >keyword used in an multilingual context. </rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >significant word, phrase or name commonly or conventionally used describing an agreed meaning.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/keyword"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_LocalisedCharacterString"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/type"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >role of the keyword.
+Note: This is a domain specific context, so not using the (broken) ISO 19115 keyword list, but choosing an empty container that can be appropriately populated with relevant terms in an extension model.</rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/type"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_KeywordRole"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="utilities/EXT_TransliterationStandardCode">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/utilities</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ISO standards relevant to the romanisation, transcription or transliteration of characters of another alphabet into Latin characters.  </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="utilities/overlapsCount">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >overlapsCount</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/class">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >class</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/temporalContextDescriptor">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >temporalContextDescriptor</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/extent">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal#Period"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >extent</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/usage">
+    <rdfs:range rdf:resource="utilities/EXT_UsageType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >usage</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/spatialContextDescriptor">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >spatialContextDescriptor</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/relatedFeatureType">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >relatedFeatureType</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/name">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >name</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/type">
+    <rdfs:range rdf:resource="utilities/EXT_KeywordRole"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >type</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/statusIdentifier">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >statusIdentifier</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/topic">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >topic</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/transliteration">
+    <rdfs:range rdf:resource="utilities/EXT_TransliterationStandardCode"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >transliteration</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/classification">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#GenericName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >classification</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/domain">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >domain</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/keyword">
+    <rdfs:range rdf:resource="utilities/EXT_LocalisedCharacterString"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >keyword</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/spatialContextDescriptor"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_SpatialContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/topic"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_ClassificationContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#asSubClass"/>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso9985">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso9985</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/relatedFeatureType"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_SpatialContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/transliteration"/>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_TransliterationStandardCode"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_LocalisedName"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso15919">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso15919</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <j.1:EXT_UsageType rdf:about="utilities/conventional">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >conventional</rdfs:label>
+  </j.1:EXT_UsageType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/domain"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_SpatialContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/usage"/>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_UsageType"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_LocalisedName"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.1:EXT_UsageType rdf:about="utilities/historical">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >historical</rdfs:label>
+  </j.1:EXT_UsageType>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso259">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso259</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#isProfile"/>
+  <j.1:EXT_UsageType rdf:about="utilities/vernacular">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >vernacular</rdfs:label>
+  </j.1:EXT_UsageType>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/overlapsCount"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_SpatialContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/statusIdentifier"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_TemporalContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso9984">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso9984</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/extent"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal#Period"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_TemporalContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso7098">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso7098</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/keyword"/>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_LocalisedCharacterString"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_MultilingualKeyword"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/temporalContextDescriptor"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_TemporalContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/name"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_LocalisedName"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso11940">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso11940</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/classification"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#GenericName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_ClassificationContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/type"/>
+        <owl:allValuesFrom rdf:resource="utilities/EXT_KeywordRole"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_MultilingualKeyword"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso11941">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso11941</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso233">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso233</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso9">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso9</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/class"/>
+        <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#ScopedName"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="utilities/EXT_ClassificationContext"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso843">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso843</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+  <j.1:EXT_UsageType rdf:about="utilities/official">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >official</rdfs:label>
+  </j.1:EXT_UsageType>
+  <j.1:EXT_TransliterationStandardCode rdf:about="utilities/iso3602">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso3602</rdfs:label>
+  </j.1:EXT_TransliterationStandardCode>
+</rdf:RDF>

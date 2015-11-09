@@ -1,0 +1,783 @@
+##############################################################
+#
+#
+# This is an elda configuration for an extended concept of a Feature Type Catalog based on pure OWL/RDF
+# with ability to bind to ISO ontology.
+#
+# Author: Rob Atkinson, Metalinkage
+#
+# This is based on and should be compatible to co-install with the template LDA configuration for a SISSvoc service
+# Reference - <https://www.seegrid.csiro.au/wiki/Siss/VocabularyService3>
+#
+# Copyright (c) Metalinkage
+# Re-use permitted according to LGPL 3
+#
+# Contact: Robert A Atkinson
+#          Metalinkage
+
+#          rob "at" metalinkage.com.au
+#
+# The configuration should only need the SPARQL endpoint customised provided that content is correctly loaded 
+# each UML package defines an ontology, which is loaded into a graph using the ontology URI as the name 
+#
+##############################################################
+
+## Common prefixes - don't change these.
+@prefix api:     <http://purl.org/linked-data/api/vocab#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix elda:    <http://www.epimorphics.com/vocabularies/lda#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix sissowl: <http://def.seegrid.csiro.au/isotc211//owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix svoc:    <http://www.seegrid.csiro.au/siss/voc/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann:		<http://purl.org/vocab/vann/> .
+
+@prefix gml:     <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#> .
+
+# Feature type catalog meta-model
+
+@prefix ftc:     <http://www.seegrid.csiro.au/siss/ftc/> .
+@prefix skosm: <http://www.w3.org/2004/02/skos/mapping#> .
+@prefix h2s:     <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/hm2skos#> .
+@prefix h2o:     <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+
+@prefix ftcm: <http://id.sirf.net/def/schema/meta-modelmappings/> .
+
+#temp namespace for things we need to construct for now..
+@prefix temp: <http://metalinkage.con.au/def/ftc-temp#> .
+
+#example specific
+#@prefix eg:  <http://example.org/test-case/testasbase/> 
+
+##############################################################
+##
+## TODO: deployer to make changes here
+## other namespaces that appear in this vocabulary
+
+@prefix gml31:   <http://def.seegrid.csiro.au/ogc/dataType/OGC-GML/3.1/> .
+@prefix gml32:   <http://def.seegrid.csiro.au/ogc/dataType/OGC-GML/3.2/> .
+
+@prefix tm_classmaps: <http://csiro.au/hollowWorld/classmaps/20130208/ClassMap_ISO_19108_Temporal_GML31/> .
+@prefix mapping_model: <http://csiro.au/hollowWorld/classmaps/20130208/mappingModel#> .
+
+## end of TODO:
+##############################################################
+
+
+##############################################################
+##
+## TODO: deployer to make changes here
+## change "test" to give this API a name to distinguish it from any other API hosted by the same LDA service
+
+ftc:ftc a api:API
+
+## end of TODO:
+##############################################################
+
+# generic API stuff
+    ; api:maxPageSize "50"
+    ; api:defaultPageSize "10"
+    ; api:defaultFormatter [
+            a api:XsltFormatter
+            ; api:name "html"
+            ; api:stylesheet "lda-assets/resources/siss-default/transform/ashtml-sissvoc.xsl"
+            ; api:mimeType "text/html"
+    ] ;
+
+    api:variable [api:name "webapp"; api:value "/dna"]
+    ; api:variable
+        [api:name "SISSDefaultResourceDirBase"; api:value "{webapp}/lda-assets/resources/siss-default/"]
+        , [api:name "myResourceDirBase"; api:value "{webapp}/lda-assets/resources/ftc/"]
+        , [api:name "_resourceRoot"; api:value "{webapp}/"]
+        , [api:name "serviceTitle"; api:value "Feature Type Catalog"]
+        , [api:name "serviceAuthor"; api:value "Rob Atkinson"]
+        , [api:name "serviceAuthorEmail"; api:value "rob.atkinson@csiro.au"]
+        , [api:name "serviceHomePage"; api:value "https://wiki.csiro.au/display/SIRF/FeatureTypeCatalog"]
+    ; api:endpoint  ftc:findElementExact,
+					ftc:findElement,
+
+					ftc:featuretypes,
+					ftc:listclasses,
+#					ftc:listclassesinscheme,
+					ftc:basicFeatureEndpoint,
+					ftc:featureTypeProperties,
+
+					ftc:unionMembers,
+					ftc:children,
+					ftc:subclasses,
+					ftc:parents,
+					ftc:ancestors,
+
+					ftc:schemamappingsto,
+					ftc:schemamappingsfrom,
+#					ftc:schemaimports,
+					ftc:featuretypemappings,
+					ftc:propertymappings,
+					ftc:propertyEndpoint,
+					ftc:URIEndpoint
+
+    ; api:defaultViewer api:describeViewer
+
+    ; rdfs:label "Feature Type Catalog: ISO 19109/19150 Application Schema Viewpoint"@en
+
+    ; api:sparqlEndpoint <http://localhost:8080/openrdf-sesame/repositories/ftc>
+    .
+<http://localhost:8080/openrdf-sesame/repositories/ftc> elda:supportsNestedSelect true .
+
+
+#VIEWERS
+
+ftc:viewerNone a api:Viewer
+    ; api:name "none"
+    .
+
+ftc:restrictionViewer
+a api:Viewer ;
+api:name "restriction" ;
+api:properties "allValuesFrom, someValuesFrom, maxCardinality, minCardinality, onProperty" ;
+.
+
+ftc:basicFeatureViewer a api:Viewer
+    ; api:name "Feature Type"
+    ; api:property rdfs:label ,rdfs:comment, rdfs:isDefinedBy,  (rdfs:isDefinedBy rdfs:label), rdfs:seeAlso 
+    .
+
+# allows determination of the object type of an element discovered by context or a search
+ftc:elementTypeViewer a api:Viewer
+    ; api:name "Definition"
+    ; api:property rdfs:label, rdfs:comment, 			 rdfs:seeAlso , (temp:realises rdfs:isDefinedBy), (temp:realises rdfs:comment) , rdfs:subClassOf, (rdfs:subClassOf rdfs:label) , (rdfs:isDefinedBy rdfs:label) , (rdfs:isDefinedBy gml:targetNamespace)
+    .
+
+ftc:basicOwlClassViewer a api:Viewer
+    ; api:name "class"
+    ; api:property rdfs:label
+    .
+    
+ftc:schemaListingViewer a api:Viewer
+    ; api:name "schema"
+    ; api:property rdfs:label, dc:description, gml:targetNamespace, vann:preferredNamespacePrefix, dc:source 
+    .
+
+
+ftc:featureWithPropertiesViewer a api:Viewer
+    ; api:name "Feature Type Extended Definition"
+    ; api:include ftc:basicFeatureViewer
+    ; api:property rdfs:label, rdfs:comment, 			 rdfs:seeAlso  , (rdfs:isDefinedBy gml:targetNamespace), (temp:realises rdfs:label), (temp:realises rdfs:isDefinedBy), (temp:realises rdfs:comment) ,h2s:property, (h2s:property rdfs:label), (h2s:property rdfs:comment), (skos:broader h2s:property), skos:broader, (skos:broader rdfs:label), skos:inScheme
+    .
+
+
+ftc:featurePropertiesViewer a api:Viewer
+    ; api:name "property (of a Feature Type) description"
+    ; rdfs:comment "Lists properties, as found within owl:restriction clases, including any type, cardinality and tagged values information available"
+    ; api:property owl:onProperty,
+            ( owl:onProperty rdfs:isDefinedBy ),
+            ( owl:onProperty rdfs:label ),
+            ( owl:onProperty rdfs:comment ),
+             ( owl:onProperty skos:prefLabel ),
+             (owl:annotatedTarget rdfs:label ),
+             (owl:annotatedTarget h2o:isAbstract ),
+
+            temp:associationClass ,
+
+             (owl:annotatedTarget h2o:BasicType ),
+             (temp:onFeature rdfs:label ),
+            rdfs:label,
+            rdfs:comment,
+            # data type of property
+            rdfs:range,
+            (rdfs:range skos:mappingRelation mapping_model:gmlObjectElement  ),
+            (rdfs:range skos:mappingRelation mapping_model:umlClass   ),
+            (rdfs:range skos:mappingRelation mapping_model:gmlType  ),
+            (rdfs:range skos:mappingRelation  mapping_model:gmlPropertyType   ),
+
+            # as used in Feature type
+            owl:cardinality,
+            owl:maxCardinality, owl:minCardinality,
+            gml:sequenceNumber , gml:nillable , gml:inlineOrByReference
+
+.
+
+ftc:propertyViewer a api:Viewer
+    ; api:name "property (of a Feature Type) description"
+    ; rdfs:comment "Describes a property"
+    ; api:property owl:onProperty,
+            ( rdfs:isDefinedBy rdfs:label ),
+            rdfs:label,
+             rdfs:comment ,
+             skos:prefLabel ,
+			 rdfs:seeAlso ,
+            rdfs:range,
+            (rdfs:range skos:mappingRelation mapping_model:gmlObjectElement  ),
+            (rdfs:range skos:mappingRelation mapping_model:umlClass   ),
+            (rdfs:range skos:mappingRelation mapping_model:gmlType  ),
+            (rdfs:range skos:mappingRelation  mapping_model:gmlPropertyType   )
+.
+
+ftc:featureMappingsViewer a api:Viewer
+    ; api:name "property mappings for a given feature"
+    ; rdfs:comment "Lists mappings between features"
+    ; api:property
+            rdfs:label,
+            rdfs:comment,
+            ftcm:mappingScope,
+            ftcm:sourceFeature,
+			(ftcm:sourceFeature rdfs:isDefinedBy gml:targetNamespace ) ,
+            ftcm:targetFeature,
+            ftcm:gml_xpath,
+           (ftcm:target rdf:type rdfs:label ),
+			(ftcm:property rdfs:label ),
+            (ftcm:property rdf:type rdfs:label ),
+            (ftcm:property rdfs:range ftcm:gml_xpath ),
+
+            (ftcm:component ftcm:sourceComponent ),
+            (ftcm:component ftcm:gml_xpath ),
+            (ftcm:component ftcm:sourceLiteral ),
+            (ftcm:component ftcm:sourceNamespace ),
+            (ftcm:component ftcm:luService ),
+            (ftcm:component ftcm:luFile ),
+            (ftcm:component ftcm:mappingFunction ),
+            (ftcm:component ftcm:targetComponent ),
+            
+            (ftcm:property ftcm:path1 rdfs:label ),
+            (ftcm:property ftcm:path1 rdf:type rdfs:label ),
+            (ftcm:property ftcm:path1 rdfs:range ftcm:gml_xpath ),
+            
+            (ftcm:property ftcm:path2 rdfs:label ),
+            (ftcm:property ftcm:path2 rdf:type rdfs:label ),
+            (ftcm:property ftcm:path2 rdfs:range ftcm:gml_xpath ),
+			
+			 (ftcm:property ftcm:path3 rdfs:label ),
+            (ftcm:property ftcm:path3 rdf:type rdfs:label ),
+            (ftcm:property ftcm:path3 rdfs:range ftcm:gml_xpath ),
+			
+			 (ftcm:property ftcm:path4 rdfs:label ),
+            (ftcm:property ftcm:path4 rdf:type rdfs:label ),
+            (ftcm:property ftcm:path4 rdfs:range ftcm:gml_xpath )		
+             
+.
+
+#ENDPOINTS
+
+## 0. This is the basic "tell me what you know about the resource identified by this URI" request.
+
+# search endpoint working with deafault HTML rendering
+ftc:findElementExact  a api:ListEndpoint;
+        rdfs:comment "List definitions with labels matching an exact term";
+        api:uriTemplate "/ftc/findElementExact?match={text}";
+        api:variable [
+            api:name "text2" ;
+            api:value "{text}" ;
+                api:type xsd:string ;
+        ] ;
+        api:exampleRequestPath "/ftc/findElementExact?match=HY_Basin";
+        api:selector [
+            api:where "GRAPH ?g { ?item rdfs:label  ?text2  }"
+        ];
+        api:defaultViewer ftc:elementTypeViewer;
+        .
+
+#TODO may have ELDA bug = matched "ydro" but not "Hydro" for HydroCollection
+ftc:findElement  a api:ListEndpoint;
+        rdfs:comment "List definitions with labels or comments  matching a query ";
+        api:uriTemplate "/ftc/findElement?q={text}";
+        api:exampleRequestPath "/ftc/findElement?q=catchment";
+        api:selector [
+            api:where "GRAPH ?g {  ?item ?label ?l . FILTER ( ?label = rdfs:label || ?label = rdfs:comment ) FILTER regex( str(?l), ?text, 'i' )}"
+        ];
+        api:defaultViewer ftc:elementTypeViewer;
+        .
+		
+ftc:basicFeatureEndpoint a api:ItemEndpoint
+        ; rdfs:comment "Describe a ISO 19109 Feature Definition"
+
+        ; api:uriTemplate  "/ftc/feature?uri={URI}"
+        ; api:exampleRequestPath  "/ftc/feature?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin"
+        ; api:exampleRequestPath  "/ftc/feature?uri=http://example.org/test-case/testas00/MySample"
+        ; api:itemTemplate  "{URI}"
+        ; api:selector [
+                api:where " {?item rdfs:isDefinedBy ?appschema . ?item rdfs:subClassOf h2o:FeatureType ; }  "
+        ]
+        ; api:defaultViewer  ftc:featureWithPropertiesViewer
+
+        .
+
+#JY 20121218: this just allows any uri to be viewed...
+ftc:URIEndpoint a api:ItemEndpoint
+        ; rdfs:comment "Describe this resource"
+        #pass to rendering stylesheet to customise presentation
+        ;    api:variable        [api:name "title"; api:value "Resource description"]
+        ; api:uriTemplate  "/ftc/resource?uri={URI}"
+        ; api:exampleRequestPath  "/ftc/resource?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin"
+        ; api:itemTemplate  "{URI}"
+        ; api:defaultViewer  api:describeViewer
+        ; api:viewer  api:basicViewer,api:describeViewer,api:labelledDescribeViewer,ftc:basicFeatureViewer
+        .
+
+
+ftc:propertyEndpoint a api:ItemEndpoint
+        ; rdfs:comment "Describe a ISO 19109 Feature Property Definition"
+
+        ; api:uriTemplate  "/ftc/property?uri={URI}"
+        ; api:exampleRequestPath  "/ftc/property?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/outfall"
+        ; api:itemTemplate  "{URI}"
+        ; api:selector [
+                api:where " {?item rdfs:isDefinedBy ?appschema . ?item a rdf:Property ; }  "
+        ]
+        ; api:defaultViewer  ftc:propertyViewer
+        .
+
+ftc:listclasses a api:ListEndpoint
+    ; rdfs:label "Class list"
+    ; rdfs:comment "All classes in repository (debugging aid only)"
+    ; api:uriTemplate "/ftc/classes"
+    ; api:exampleRequestPath  "/ftc/classes"
+    ; api:selector [
+        api:where
+           """
+              {?item rdf:type rdfs:Class  }
+               FILTER ( !isBlank(?item) )
+           """;
+
+        api:sort "label"
+    ]
+    .
+
+ftc:featuretypes a api:ListEndpoint
+    ; rdfs:label "List Feature Types in an applicationSchema"
+    ; rdfs:comment "TBD: Needs to discriminate between genuine subclasses - i.e. in a real application schema and constraints added in a profile - this seems to fail without magic tagged value or stereotype"
+    ; api:uriTemplate "/ftc/featuretypes?uri={URI}"
+    ; api:exampleRequestPath  "http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature"
+    ; api:variable [
+        api:name "appschema" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where " {?item rdfs:isDefinedBy ?appschema . ?item rdfs:subClassOf h2o:FeatureType ; }  FILTER ( !isBlank(?item) ) ";
+        api:sort "label"
+    ]
+    ; api:defaultViewer  ftc:basicFeatureViewer
+    ; api:viewer  api:basicViewer,api:describeViewer,api:labelledDescribeViewer
+    .
+
+#RA: now includes all the related property definition information
+ftc:featuretype-properties-selector api:where
+"""
+    ?item a temp:propertybinding.
+    ?item owl:annotatedTarget ?ft.
+    ?item owl:onProperty ?prop .
+""";
+    api:orderBy "str(?prop)";
+    .
+
+
+ftc:featureTypeProperties a api:ListEndpoint
+    ; rdfs:label "List Properties for a FeatureType"
+    ;    api:variable        [api:name "title"; api:value "Property bindings for selected feature type"]
+    ; rdfs:comment "Lists and describes properties of a FeatureType"
+    ; api:uriTemplate "/ftc/featuretype/properties?uri={URI}"
+    ; api:exampleRequestPath  "/ftc/featuretype/properties?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin"
+ ; api:variable [
+        api:name "ft" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector ftc:featuretype-properties-selector
+    ; api:defaultViewer  ftc:featurePropertiesViewer
+    .
+
+
+#JY: the following selects the list of object/data properties for a FeatureType
+#RA: why do we need to treat datatype and object type differently?
+ftc:featuretype-datatypeProperties-selector api:where
+"""
+    ?ft rdfs:subClassOf+ ?r .
+    ?item a owl:DatatypeProperty .
+    ?item rdfs:domain gf:AnyFeature .
+    graph ?p {
+      ?r owl:onProperty ?item .
+    }
+    FILTER (!isBlank(?ft))
+""";
+    api:orderBy "str(?item)";
+    .
+
+ftc:schemamappingsfrom a api:ListEndpoint
+    ; rdfs:label "Mapping Models from a schema to another schems"
+    ; rdfs:comment "List outbound MappingContexts for Feature Types defined in a given schema"
+    ; api:uriTemplate "/ftc/mappings/from?schema={URI}"
+    ; api:exampleRequestPath  "/ftc/mappings/from?schema=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature"
+    ; api:variable [
+        api:name "sc" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where "SELECT DISTINCT ?item  WHERE { graph ?item {?m a ftcm:MappingClass } . ?m ftcm:sourceFeature ?ft . ?ft rdfs:isDefinedBy ?sc }";
+  
+    ]
+    ; api:defaultViewer  ftc:schemaListingViewer
+
+    .
+
+	
+ftc:schemamappingsto a api:ListEndpoint
+    ; rdfs:label "Mapping Models to a schema"
+    ; rdfs:comment "List inbound MappingContexts for Feature Types defined in a given schema"
+    ; api:uriTemplate "/ftc/mappings/to?schema={URI}"
+    ; api:exampleRequestPath  "/ftc/mappings/to?schema=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin"
+    ; api:variable [
+        api:name "sc" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where "SELECT DISTINCT ?item  WHERE { graph ?item {?m a ftcm:MappingClass } . ?m ftcm:targetFeature ?ft . ?ft rdfs:isDefinedBy ?sc }";
+  
+    ]
+    ; api:defaultViewer  ftc:schemaListingViewer
+
+    .
+	
+ftc:featuretypemappings a api:ListEndpoint
+    ; rdfs:label "Mapping Models for FT"
+    ; rdfs:comment "List MappingContexts for a Feature Types in a mapping model"
+    ; api:uriTemplate "/ftc/featuretype/mappings?uri={URI}"
+    ; api:exampleRequestPath  "/ftc/featuretype/mappings?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin"
+    ; api:variable [
+        api:name "ft" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where " graph ?item {?m a ftcm:MappingClass . ?m ftcm:sourceFeature ?ft } ";
+  
+    ]
+    ; api:defaultViewer  ftc:schemaListingViewer
+
+    .
+
+ftc:propertymappings a api:ListEndpoint
+    ; rdfs:label "List PropertyMappings for a Feature Types in a mapping model"
+    ; rdfs:comment "Testing"
+    ; api:uriTemplate "/ftc/featuretype/mappings?uri={URI}&mappingContext={mURI}"
+    ; api:exampleRequestPath  "/ftc/featuretype/mappings?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin&mappingContext=http://example.org/test-case/mapping01"
+    ; api:variable [
+        api:name "ft" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:variable [
+        api:name "mappingmodel" ;
+        api:value "{mURI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where " graph ?mappingmodel {?item a ftcm:PropertyMapping . ?item ftcm:sourceFeature ?ft }  ";
+        api:sort "label"
+    ]
+    ; api:defaultViewer  ftc:featureMappingsViewer
+
+    .
+
+
+#JY: the following selects the list of object/data properties for a FeatureType
+#RA: now includes all the related property definition information
+ftc:featuretype-properties-selector api:where
+"""
+    ?item a temp:propertybinding.
+    ?item owl:annotatedTarget ?ft.
+    ?item owl:onProperty ?prop .
+""";
+    api:orderBy "str(?prop)";
+    .
+
+#JY: the following selects the list of object/data properties for a FeatureType
+ftc:union-members-selector api:where
+"""
+   ?union rdfs:subClassOf h2o:Union .
+   ?union owl:equivalentClass ?e .
+    graph ?p {
+      ?e owl:unionOf ?list .
+      ?list rdf:rest*/rdf:first ?item
+    }
+    FILTER (!isBlank(?union) && !isBlank(?item))
+""";
+    api:orderBy "str(?item)";
+    .
+
+ftc:unionMembers a api:ListEndpoint
+    ; rdfs:label "List member of a Union "
+    ; rdfs:comment ""
+    ; api:uriTemplate "/ftc/union/members?uri={URI}"
+#    ; api:exampleRequestPath  "/ftc/union/members?uri=http://www.bom.gov.au/std/water/xml/wdtf/1.2/ObservationMember/1.2/ObservationMember"
+    ; api:variable [
+        api:name "union" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector ftc:union-members-selector
+    ; api:defaultViewer  ftc:basicFeatureViewer
+    ; api:viewer  api:basicViewer,api:describeViewer,api:labelledDescribeViewer
+    .
+
+
+ftc:children a api:ListEndpoint
+    ; rdfs:label "Child classes: direct specialisations of a Feature Type"
+    ; rdfs:comment "TBD: Needs to discriminate between genuine subclasses - i.e. in a real application schema and constraints added in a profile - this seems to fail without magic tagged value or stereotype"
+    ; api:uriTemplate "/ftc/children?uri={URI}"
+    ; api:exampleRequestPath  "/ftc/children?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_CatchmentRepresentation"
+    ; api:variable [
+        api:name "class" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where " {?item rdfs:subClassOf ?class .  }  FILTER ( !isBlank(?item)  && ?item != ?class) ";
+        api:sort "label"
+    ]
+    ; api:defaultViewer  ftc:basicFeatureViewer
+    ; api:viewer  api:basicViewer,api:describeViewer,api:labelledDescribeViewer
+    .
+
+
+
+ftc:subclasses a api:ListEndpoint
+    ; rdfs:label "Child classes: all direct and indirect specialisations of a Feature Type"
+    ; rdfs:comment "TBD: Needs to discriminate between genuine subclasses - i.e. in a real application schema and constraints added in a profile - this seems to fail without magic tagged value or stereotype"
+    ; api:uriTemplate "/ftc/subclasses?uri={URI}"
+    ; api:exampleRequestPath  "/ftc/subclasses?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Catchment"
+    ; api:variable [
+        api:name "class" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where " {?item rdfs:subClassOf+ ?class }  FILTER ( !isBlank(?item) && ?item != ?class ) ";
+        api:sort "label"
+    ]
+    ; api:defaultViewer  ftc:basicFeatureViewer
+    ; api:viewer  api:basicViewer,api:describeViewer,api:labelledDescribeViewer
+    .
+
+
+
+ftc:parents a api:ListEndpoint
+    ; rdfs:label "Parents of Feature Type"
+    ; rdfs:comment "Parents do need to discriminate what type of class is involved, URI sets context"
+    ; api:uriTemplate "/ftc/parents?uri={URI}"
+    ; api:exampleRequestPath  "/ftc/parents?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin"
+    ; api:variable [
+        api:name "class" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where " {?class rdfs:subClassOf ?item  ; }  FILTER ( !isBlank(?item) && ?item != ?class ) ";
+        api:sort "label"
+    ]
+    ; api:defaultViewer  ftc:basicFeatureViewer
+    ; api:viewer  api:basicViewer,api:describeViewer,api:labelledDescribeViewer
+    .
+
+
+
+ftc:ancestors a api:ListEndpoint
+    ; rdfs:label "Parents of Feature Type"
+    ; rdfs:comment "Parents do need to discriminate what type of class is involved, URI sets context"
+    ; api:uriTemplate "/ftc/ancestors?uri={URI}"
+    ; api:exampleRequestPath  "/ftc/ancestors?uri=http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature/HY_Basin"
+    ; api:variable [
+        api:name "class" ;
+        api:value "{URI}" ;
+        api:type rdfs:Resource ;
+        ]
+    ; api:selector [
+        api:where " {?class rdfs:subClassOf+ ?item ; }  FILTER ( !isBlank(?item) && ?item != ?class  ) ";
+        api:sort "label"
+    ]
+    ; api:defaultViewer  ftc:basicFeatureViewer
+    ; api:viewer  api:basicViewer,api:describeViewer,api:labelledDescribeViewer
+    .
+
+
+
+#
+# VOCABULARY
+#
+# The vocabulary declarations say which properties can be used in queries
+# and by what short name those properties are known. If property P with short
+# name Q has range type T, then a query parameters Q=V is translated to
+# a WHERE clause fragment ?item P V' where V' is a literal which is V
+# with type T. This is especially important for numbers and booleans.
+#
+
+## RDF
+rdf:type
+    api:label "type" ;
+    rdfs:range rdfs:Class .
+
+rdf:Property api:label "Property" .
+
+rdf:type api:label "type"
+    ; api:multiValued true
+    ; rdfs:range rdfs:Class
+    .
+
+rdf:value api:label "value" .
+
+rdf:rest api:label "rest"
+    ; rdfs:range rdf:List
+    .
+
+rdf:List api:label "List" .
+
+
+## RDFS
+rdfs:label
+    api:label "label" ;
+    api:structured "true"^^xsd:boolean;
+    a           rdf:Property .
+
+rdfs:comment
+    api:label "comment" ;
+    api:structured "true"^^xsd:boolean;
+    a           rdf:Property .
+
+rdfs:Class api:label "Class" .
+
+rdfs:label api:label "label" ; api:multiValued true .
+
+rdfs:seeAlso api:label "seeAlso" ; api:multiValued true .
+
+rdfs:comment api:label "comment" .
+
+rdfs:range api:label "range" .
+
+rdfs:domain api:label "domain" .
+
+rdfs:isDefinedBy api:label "ApplicationSchema" .
+
+rdfs:subClassOf api:label "subClassOf" .
+
+rdfs:subPropertyOf api:label "subPropertyOf" .
+
+
+
+## SKOS
+skos:concept
+        api:label "feature" ;
+        a         rdfs:Class .
+
+
+## Feature Model
+skos:broader
+        api:label "Specialises" ;
+        a         rdfs:Class .
+
+
+skos:inScheme
+        api:label "ApplicationSchema" ;
+        a         rdfs:Class .
+
+# appears (incorrectly) in some transport data.
+skos:prefName api:label "prefName".
+
+rdfs:seeAlso api:label "also".
+
+skos:Concept api:label "Concept" .
+
+skos:ConceptScheme api:label "ConceptScheme" .
+
+skos:prefLabel api:label "prefLabel" .
+
+skos:altLabel api:label "altLabel"
+    ; api:multiValued true .
+
+skos:note api:label "note" .
+
+skos:notation api:label "notation" .
+
+skos:scopeNote api:label "scopeNote" .
+
+skos:topConceptOf api:label "topConceptOf"
+    ; rdfs:range rdfs:Resource
+    .
+
+skos:hasTopConcept api:label "topConcept"
+    ; rdfs:range rdfs:Resource
+    ; api:multiValued true
+    .
+
+skos:narrower api:label "narrower"
+    ; rdfs:range rdfs:Resource
+    ; api:multiValued true
+    .
+
+skos:mappingRelation api:label "mappingRelation" .
+
+#mapping model
+
+mapping_model:umlClass api:label "umlClass" .
+mapping_model:gmlObjectElement api:label "gmlObjectElement" .
+mapping_model:gmlType api:label "gmlType" .
+mapping_model:gmlPropertyType api:label "gmlPropertyType" .
+
+
+temp:realises api:label "ConceptualClass" .
+
+#ISO model
+h2s:property api:label "Properties" .
+
+
+#gml
+gml:sequenceNumber api:label "sequenceNumber" .
+
+gml:targetNamespace api:label "gmlNamespace" .
+
+gml:byValuePropertyType api:label "byValuePropertyType" .
+
+gml:isCollection api:label "isCollection" .
+gml:noPropertyType api:label "noPropertyType" .
+
+
+#OWL
+
+owl:Restriction api:label "Restriction" .
+
+owl:DatatypeProperty api:label "DatatypeProperty" .
+
+owl:ObjectProperty api:label "ObjectProperty" .
+
+owl:Axiom api:label "Axiom" .
+
+owl:onProperty api:label "onProperty" .
+
+owl:someValuesFrom api:label "someValuesFrom" .
+
+owl:allValuesFrom api:label "allValuesFrom" .
+
+owl:equivalentClass api:label "equivalentClass" .
+
+owl:annotatedSource api:label "annotatedSource" .
+
+owl:annotatedProperty api:label "annotatedProperty" .
+owl:annotatedTarget api:label "annotatedTarget" .
+
+owl:cardinality api:label "cardinality" .
+
+owl:maxCardinality api:label "maxCardinality" .
+owl:minCardinality api:label "minCardinality" .
+
+owl:sameAs api:label "sameAs" .
+owl:imports api:label "imports" .
+owl:versionInfo api:label "versionInfo" .
+
+foaf:isPrimaryTopicOf a rdf:Property;
+    api:label "isPrimaryTopicOf"
+    .

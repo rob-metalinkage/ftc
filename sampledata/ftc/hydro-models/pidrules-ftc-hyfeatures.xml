@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<backup type="partial" scope="record" xmlns="urn:csiro:xmlns:pidsvc:backup:1.0">
+    <!-- what do we know about object types when different types of things in same model
+        - for SIRF, models are ISO standard so , Classes start with UpperCamelCase, properties with lowerCamelCase 
+        - but for source models this doesnt necessarily hold
+     -->
+    <mapping>
+        <path>^(/def/schema/hy_features/)([^/]+)/?(.*)$</path>
+        <parent>^(/def/schema/(?:.+/?)+)$</parent>
+        <type>Regex</type>
+        <description>rules for HY_features (disposition of related schema artefacts) $Header: https://svnserv.csiro.au/svn/SIRF/Projects/data/linked-data/trunk/ftc/hydro-models/pidrules-ftc-hyfeatures.xml 2105 2014-06-03 12:02:34Z ran110 $</description>
+        <creator>Rob Atkinson</creator>
+<!--        <action>
+            <type>303</type>
+            <name>location</name>
+            <value>http://unsdi-dev.csiro.au/sissvoc/ftc/resource?uri=${RAW:${ENV:FULL_REQUEST_URI}}&amp;_format=${C:_format}</value>
+        </action>-->
+        <conditions>
+            <condition>
+                <type>QueryString</type>
+                <match>_view=^(OWL|owl)$</match>
+                <actions>
+                    <action>
+                        <type>303</type>
+                        <name>location</name>
+                        <value>https://svnserv.csiro.au/svn/SIRF/public/def/schema/hy_features/$2.rdf#$3</value>
+                    </action>
+                </actions>
+            </condition>
+            <condition>
+                <type>QueryString</type>
+                <match>_view=^(XSD|xsd)$</match>
+                <actions>
+                    <action>
+                        <type>303</type>
+                        <name>location</name>
+                        <value>https://svnserv.csiro.au/svn/SIRF/public/def/schema/hy_features/gml3.2/$2.xsd</value>
+                    </action>
+                </actions>
+            </condition>
+            <condition>
+                <type>QueryString</type>
+                <match>_view=^(GML3.1)$</match>
+                <actions>
+                    <action>
+                        <type>303</type>
+                        <name>location</name>
+                        <value>https://svnserv.csiro.au/svn/SIRF/public/def/schema/hy_features/gml3.1.1/$2.xsd</value>
+                    </action>
+                </actions>
+            </condition>
+            <condition>
+                <type>QueryString</type>
+                <match>_view=^(GML3.2)$</match>
+                <actions>
+                    <action>
+                        <type>303</type>
+                        <name>location</name>
+                        <value>https://svnserv.csiro.au/svn/SIRF/public/def/schema/hy_features/gml3.2/$2.xsd</value>
+                    </action>
+                </actions>
+            </condition>
+            <condition>
+                <type>QueryString</type>
+                <match>_view=^(UML)$</match>
+                <actions>
+                    <action>
+                        <type>303</type>
+                        <name>location</name>
+                        <value>https://svnserv.csiro.au/svn/SIRF/public/def/schema/hy_features/$2.xml</value>
+                    </action>
+                </actions>
+            </condition>
+        </conditions>
+    </mapping>
+</backup>

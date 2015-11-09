@@ -1,0 +1,132 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:h2o="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:hya="http://demo.metalinkage.com.au/def/schema/hy_features/utilities/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:j.1="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:j.2="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://demo.metalinkage.com.au/def/schema/hy_features/hydrometric">
+  <owl:Ontology rdf:about="">
+    <j.2:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/hydrometric/</j.2:targetNamespace>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+    <j.2:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hy_metric.xsd</j.2:xsdDocument>
+    <j.2:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.0.9</j.2:version>
+    <j.2:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hym</j.2:xmlns>
+    <j.1:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.1:xsdEncodingRule>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dornblut</dc:contributor>
+    <basic:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+    <owl:imports rdf:resource="utilities"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="hydrometric/HY_HydrometricFeature">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/positionOnRiver"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/positionOnRiver"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_ReferencePoint"/>
+        <rdfs:comment>position of the hydrometric feature in the hydrographic network, usually on a river.
+</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/hydrometric</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >station at which data on water in rivers, lakes or reservoirs are obtained on one or more of the following elements: stage, streamflow, sediment transport and deposition, water temperature and other physical properties of water, characteristics of ice cover and chemical properties of water.
+&lt;i&gt;(Source: station. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0627EN.HTM)&lt;/i&gt;
+
+Note 1: In the observation context, the hydrometric feature may represent a special sampling feature. 
+Note 2: A hydrometric feature is physical artifact, or a collection of these. Some may be a fictive ones.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >WaterObservationFeature</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="hydrometric/HY_HydrometricFeatureSegment">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/hydrometric</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >segment or component of a hydrometric feature.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="hydrometric/HY_HydrometricNetwork">
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="utilities/HY_Network">
+        <rdfs:comment></rdfs:comment>
+      </rdf:Description>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/hydrometric</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >network (aggregate) of hydrological stations and observing posts situated within any given area (river basin, administrative region) in such a way as to provide the means of studying the hydrological regime. 
+&lt;i&gt;(Source: hydrometric network. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0616EN.HTM)&lt;/i&gt;
+
+
+Note 1: not to be confused with the natural network of hydrographic features (hydrographic network)
+Note 2: not to be confused with network sampling as distinct method of sampling. </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="utilities/positionOnRiver">
+    <rdfs:range rdf:resource="utilities/HY_ReferencePoint"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >positionOnRiver</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/positionOnRiver"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_ReferencePoint"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.2:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="hydrometric/HY_HydrometricFeature"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>position of the hydrometric feature in the hydrographic network, usually on a river.
+</rdfs:comment>
+    <j.2:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.2:sequenceNumber>
+  </owl:Axiom>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#asSubClass"/>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#isProfile"/>
+</rdf:RDF>

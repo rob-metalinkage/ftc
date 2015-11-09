@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="https://www.seegrid.csiro.au/subversion/xmml/ontologies/tags/201311/basic/HM/metadata.rdf" uri="file:/C:/repos/UNSDI/Projects/data/linked-data/trunk/ftc/HM/iso19115/2003/metadata.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="http://demo.metalinkage.com.au/def/schema/hy_features/abstracthydrofeature" uri="abstracthydrofeature.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="http://demo.metalinkage.com.au/def/schema/hy_features/atmosphere" uri="atmosphere.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="http://demo.metalinkage.com.au/def/schema/hy_features/hydrometric" uri="hydrometric.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="duplicate:http://demo.metalinkage.com.au/def/schema/hy_features/subsurface" uri="HY_SubsurfaceHydroFeature.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="duplicate:http://demo.metalinkage.com.au/def/schema/hy_features/subsurface" uri="subsurface.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="duplicate:http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature" uri="HY_SurfaceHydroFeature.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="duplicate:http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature" uri="surfacefeature.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="http://demo.metalinkage.com.au/def/schema/hy_features/utilities" uri="utilities.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1386026390552" name="http://pid.ereefs.info/def/schema/ahgf/HR_Catchments/" uri="AHGF_HR_Catchments.rdf"/>
+    </group>
+</catalog>

@@ -1,0 +1,92 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix :        <http://www.smartrealm.com/visualization/mappings/graph/organization#> .
+@prefix ks:      <http://www.usersmarts.com/ont/2005/06/ks#> .
+@prefix ksd:     <http://www.usersmarts.com/ont/2007/02/ks/descriptor#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix fw:      <http://www.smartrealm.com/ontologies/fwmodel#> .
+@prefix mapping:  <http://www.knowledgesmarts.com/ontologies/mapping#> .
+@prefix ksfun:   <http://www.usersmarts.com/ont/2005/06/ks/functor#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix graph:   <http://www.knowledgesmarts.com/ontologies/visualization/graphic/representations/graph#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix fn:      <http://www.knowledgesmarts.com/functions#> .
+@prefix prm:     <http://www.smartrealm.com/ont/ks/param#> .
+@prefix socialml:<http://www.socialml.org/ontology/organizations#> .
+@prefix graphics:<http://www.knowledgesmarts.com/ontologies/visualization/graphics#> .
+@prefix color:   <http://www.knowledgesmarts.com/visualization/colors#> .
+
+#
+# Organization to Graph Node mapping
+#
+:Org-Node-Mapping
+      a       mapping:ClassMapping ;
+      mapping:expression
+              [ a       fn:ChangeNamespace ;
+                fn:targetNamespace "http://www.smartrealm.com/graph/node#"
+              ] ;
+      mapping:sourceType fw:Organization ;
+      mapping:targetType graph:Node .
+
+:org-label-mapping
+      a       mapping:PropertyMapping ;
+      mapping:context :Org-Node-Mapping ;
+      mapping:sourcePredicate rdfs:label ;
+      mapping:targetPredicate graphics:label .
+
+:org-icon-mapping
+      a       mapping:PropertyMapping ;
+      mapping:context :Org-Node-Mapping ;
+      mapping:sourcePredicate foaf:depiction ;
+      mapping:targetPredicate graphics:icon .
+
+
+#
+# Affiliation to Graph Edge mapping
+#
+			  
+:Affiliation-Edge-Mapping
+	a  mapping:RelationshipClassMapping;
+	mapping:relationPredicate socialml:affiliation;
+	mapping:targetType graph:Edge;
+	mapping:srcContext :Org-Node-Mapping;
+	mapping:destContext :Org-Node-Mapping;
+	mapping:srcPredicate graph:src;
+	mapping:destPredicate graph:dest;
+	mapping:expression
+              [ a       fn:URIBuild3 ;
+                fn:template "http://www.smartrealm.com/graph/edge#Affiliation-${1}-${2}"
+              ] .
+	 
+ 
+:Affiliation-Label-Mapping	
+	 a       mapping:RelationshipPropertyMapping ;
+     mapping:context :Affiliation-Edge-Mapping ;
+     mapping:targetPredicate graphics:label ;
+	 mapping:expression 'affiliation';
+	 mapping:relationPredicate socialml:affiliation. 
+	 
+:Affiliation-Color-Mapping	
+	 a       mapping:RelationshipPropertyMapping ;
+     mapping:context :Affiliation-Edge-Mapping ;
+     mapping:targetPredicate graphics:color ;
+	 mapping:expression color:Red;
+	 mapping:relationPredicate socialml:affiliation. 
+	
+			  			  
+#:Affiliation-Source-Mapping	
+#	 a       mapping:RelationshipPropertyMapping ;
+#     mapping:context :Affiliation-Edge-Mapping ;
+#     mapping:targetPredicate graph:src ;
+#	 mapping:expression '?src'^^ks:term;
+#	 mapping:relationPredicate socialml:affiliation. 
+	 
+	 
+#:Affiliation-Dest-Mapping	
+#	 a       mapping:RelationshipPropertyMapping ;
+#     mapping:context :Affiliation-Edge-Mapping ;
+#     mapping:targetPredicate graph:dest ;
+#	 mapping:expression '?dest'^^ks:term;
+#	 mapping:relationPredicate socialml:affiliation. 
+	 

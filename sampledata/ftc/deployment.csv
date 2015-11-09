@@ -1,0 +1,23 @@
+files,targetRepos,targetContext,clearTargetContext,tmpRepos,tmpContext,clearTmpContext,postProcFile
+#
+# Meta-models
+# 
+# skos, void etc to support canonical views
+#
+ftc-common,%REPOSURI%/ftc
+# ISO harmonised ontologies (for optional ISO ontology view)
+iso19150-lib,%REPOSURI%/ftc
+# ogc ontologies - not official or stable - not sure if anything needed here
+# ogc-lib,%REPOSURI%/ftc
+#
+# Content
+#
+# example domain model
+hydro-models,%REPOSURI%/ftc
+#
+# post-processing 
+#
+ftc-postproc,%REPOSURI%/ftc
+
+
+

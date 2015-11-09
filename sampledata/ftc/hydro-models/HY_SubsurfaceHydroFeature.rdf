@@ -1,0 +1,347 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:h2o="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:hya="http://demo.metalinkage.com.au/def/schema/hy_features/utilities/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:j.1="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:j.2="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://demo.metalinkage.com.au/def/schema/hy_features/subsurface">
+  <owl:Ontology rdf:about="">
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dornblut</dc:contributor>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+    <owl:imports rdf:resource="utilities"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <basic:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+    <j.1:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.1:xsdEncodingRule>
+    <j.2:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hygw</j.2:xmlns>
+    <j.2:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.0.9</j.2:version>
+    <j.2:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hy_subsurface.xsd</j.2:xsdDocument>
+    <j.2:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface/</j.2:targetNamespace>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="subsurface/HY_GravitationalWater">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="subsurface/HY_VadoseWater"/>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >water in the unsaturated zone which moves under the influence of gravity. 
+&lt;i&gt;(Source: gravitational water (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0545EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="subsurface/HY_Aquifer">
+    <j.2:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.2:noPropertyType>
+    <j.2:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.2:isCollection>
+    <j.2:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.2:byValuePropertyType>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="subsurface/extractingWell"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="subsurface/HY_Well"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>well used to extract water from aquifer.
+Note: a well  may be a single feature, but also a composite of e.g. vertically arranged extraction locations, logically condensed to an extraction point projected onto the land surface.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >permeable water-bearing formation capable of yielding exploitable quantities of water. 
+&lt;i&gt;(Source: aquifer. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0064EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface</rdfs:isDefinedBy>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+  </owl:Class>
+  <owl:Class rdf:about="subsurface/HY_Well">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/extractionPoint"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_ReferencePoint"/>
+        <rdfs:comment>point where the well extract water, referenced by coordinates.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shaft or hole sunk, dug or drilled into the Earth to extract water. 
+&lt;i&gt;(Source: well. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1397EN.HTM)&lt;/i&gt;
+
+conceptionally, a well may be a single feature, but also a composite of e.g. vertically arranged extraction locations or a discharge area, logically condensed to single extraction point projected onto the land surface.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="subsurface/HY_SoilMoisture">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="subsurface/HY_VadoseWater"/>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >moisture contained in the portion of the soil which is above the water table, including water vapour, which is present in the soil pores. 
+&lt;i&gt;(Source: soil moisture (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1151EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="subsurface/HY_Soilwater">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="subsurface/HY_VadoseWater"/>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >water suspended in the uppermost belt of soil, or in the zone of aeration near the ground surface, that can be discharged into the atmosphere by evapotranspiration. 
+&lt;i&gt;(Source: soil water (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1160EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="subsurface/HY_VadoseWater">
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >water that occurs in the unsaturated zone, e.g. soil water (discharged by evapotranspiration), soil moisture (held by molecular attraction), and gravitational water (moving due to gravity).
+&lt;i&gt;(Source: vadose water (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1327EN.HTM)&lt;/i&gt;
+
+This class defines the existence of a water in the zone of aeration (unsatured zone), related to a surface water body by processes of recharge and discharge. subtypes may be soilwater (discharged by evapotranspiration), soil moisture (held by molecular attraction), or gravitational water (moving due to gravity).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="subsurface/bearingAquifer"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="subsurface/HY_Aquifer"/>
+        <rdfs:comment>aquifer yielding vadose water  in the unsaturated zone.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="utilities/HY_Water_LiquidPhase">
+        <rdfs:comment></rdfs:comment>
+      </rdf:Description>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="subsurface/HY_HydroGeologicUnit">
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="subsurface/containingUnit"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface</rdfs:isDefinedBy>
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="utilities/HY_CatchmentRepresentation">
+        <rdfs:comment></rdfs:comment>
+      </rdf:Description>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >formation or zone of geological material (rock or soil ) with hydrologically significant characteristics representing a catchment.  the geometric representation of the hydro-geologic unit needs to  be defined with the application.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="subsurface/containingUnit"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="subsurface/HY_HydroGeologicUnit"/>
+        <rdfs:comment>containing hydrogeologic unit in a nested hierarchy of geologic units. 
+</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="subsurface/HY_Groundwater">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="subsurface/groundwaterReservoir"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="subsurface/HY_Aquifer"/>
+        <rdfs:comment>aquifer yielding groundwater in the saturated zone.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="utilities/HY_Water_LiquidPhase"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.2:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/subsurface</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >subsurface water occupying the saturated zone. 
+&lt;i&gt;(Source: groundwater (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0551EN.HTM)&lt;/i&gt;
+
+This class defines the existence of a groundwater (satured zone), related to a surface water body by processes of recharge and discharge. To take into account the effects of groundwater interaction on a gaining/losing water body, groundwater may be associated with the relevant water body at the application level.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="utilities/extractionPoint">
+    <rdfs:range rdf:resource="utilities/HY_ReferencePoint"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >extractionPoint</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="subsurface/containingUnit">
+    <rdfs:range rdf:resource="subsurface/HY_HydroGeologicUnit"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >containingUnit</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="subsurface/bearingAquifer">
+    <rdfs:range rdf:resource="subsurface/HY_Aquifer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bearingAquifer</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="subsurface/extractingWell">
+    <rdfs:range rdf:resource="subsurface/HY_Well"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >extractingWell</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="subsurface/groundwaterReservoir">
+    <rdfs:range rdf:resource="subsurface/HY_Aquifer"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >groundwaterReservoir</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="subsurface/containingUnit"/>
+        <owl:allValuesFrom rdf:resource="subsurface/HY_HydroGeologicUnit"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.2:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="subsurface/HY_HydroGeologicUnit"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>containing hydrogeologic unit in a nested hierarchy of geologic units. 
+</rdfs:comment>
+    <j.2:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.2:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="subsurface/groundwaterReservoir"/>
+        <owl:allValuesFrom rdf:resource="subsurface/HY_Aquifer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.2:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="subsurface/HY_Groundwater"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>aquifer yielding groundwater in the saturated zone.</rdfs:comment>
+    <j.2:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.2:sequenceNumber>
+  </owl:Axiom>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#asSubClass"/>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#isProfile"/>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="subsurface/bearingAquifer"/>
+        <owl:allValuesFrom rdf:resource="subsurface/HY_Aquifer"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.2:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="subsurface/HY_VadoseWater"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>aquifer yielding vadose water  in the unsaturated zone.</rdfs:comment>
+    <j.2:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.2:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="subsurface/extractingWell"/>
+        <owl:allValuesFrom rdf:resource="subsurface/HY_Well"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.2:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="subsurface/HY_Aquifer"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>well used to extract water from aquifer.
+Note: a well  may be a single feature, but also a composite of e.g. vertically arranged extraction locations, logically condensed to an extraction point projected onto the land surface.</rdfs:comment>
+    <j.2:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.2:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/extractionPoint"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_ReferencePoint"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.2:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.2:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="subsurface/HY_Well"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>point where the well extract water, referenced by coordinates.</rdfs:comment>
+    <j.2:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.2:sequenceNumber>
+  </owl:Axiom>
+</rdf:RDF>

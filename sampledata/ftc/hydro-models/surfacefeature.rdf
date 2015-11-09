@@ -1,0 +1,611 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:h2o="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:hya="http://demo.metalinkage.com.au/def/schema/hy_features/utilities/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:j.1="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:j.2="http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature/"
+    xmlns:j.3="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature">
+  <owl:Ontology rdf:about="">
+    <j.3:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hysf</j.3:xmlns>
+    <j.1:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.1:xsdEncodingRule>
+    <basic:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic"/>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dornblut</dc:contributor>
+    <j.3:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature/</j.3:targetNamespace>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <owl:imports rdf:resource="utilities"/>
+    <j.3:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hy_surface.xsd</j.3:xsdDocument>
+    <j.3:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >0.0.9</j.3:version>
+  </owl:Ontology>
+  <owl:Class rdf:about="surfacefeature/HY_Coast">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="surfacefeature/HY_Bank"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/coastalWaterBody"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_WaterBodySegment"/>
+        <rdfs:comment>water body whose waves therein affect the rising land.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rising land affected by waves (in a water body), between uppermost landward and lowermost seaward impacts of surf action.</rdfs:comment>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/coastalWaterBody"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_River">
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="utilities/HY_WaterBody">
+        <rdfs:comment></rdfs:comment>
+      </rdf:Description>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >large stream which serves as the natural drainage channel for a drainage basin. 
+&lt;i&gt;(Source:  river. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1014EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;This class defines the existence of the body of water, as a participant in a hydrographic network. This body of water is special due to its property to permanently or temporarily flow.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HY_Stream</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_Bank">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="surfacefeature/borderedChannel"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="surfacefeature/HY_Reach"/>
+        </owl:allValuesFrom>
+        <rdfs:comment>reach (channel segment) bordered by the bank/s.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rising land bordering a river margin of a channel at the left-hand (right-hand) side when facing downstream. 
+&lt;i&gt;(Source: bank. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0106EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_Reach">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="surfacefeature/HY_ChannelSegment"/>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >length of open channel between two defined cross-sections.
+&lt;i&gt;(Source: reach. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0987EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Branch</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_Lake">
+    <rdfs:subClassOf rdf:resource="utilities/HY_WaterBody"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >inland body of water of considerable size. 
+&lt;i&gt;(Source: lake. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0729EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;This class defines the existence of the body of water, as a participant in a hydrographic network.This body of water is special due to its considerable size.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_Impoundment">
+    <rdfs:subClassOf rdf:resource="utilities/HY_WaterBody"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >body of water formed by collecting water, as by a dam. 
+&lt;i&gt;(Source: impoundment (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0658EN.HTM)&lt;/i&gt;
+
+This class defines the existence of the body of water, as a participant in a hydrographic network.This body of water is special due to the collection of water.
+
+</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_ChannelSegment">
+    <rdfs:comment></rdfs:comment>
+    <j.3:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:isCollection>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/containedWaterBody"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_WaterBodySegment"/>
+        <rdfs:comment>water body (segment) contained in the channel (segment) </rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >segment of the channel between two or more cross-sections.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/bedProfileTransversal"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_CrossSection"/>
+        <rdfs:comment>transversal shape of a stream bed in a vertical plane.
+(Source: bed profile. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0125EN.HTM)
+</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:noPropertyType>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/bedProfileLongitudinal"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_LongitudinalSection"/>
+        <rdfs:comment>longitudinal shape of a stream bed in a vertical plane, e.g. thalweg, bank line.
+(Source: bed profile. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0125EN.HTM)
+</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/containedWaterBody"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <j.3:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:byValuePropertyType>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="utilities/movingWater"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="utilities/HY_Water_LiquidPhase"/>
+        <rdfs:comment>water periodically or continuously moving in the channel (watercourse) </rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_Estuary">
+    <rdfs:subClassOf rdf:resource="utilities/HY_WaterBody"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >generally broad portion of a stream near its outlet. 
+&lt;i&gt;(Source: estuary. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0417EN.HTM)&lt;/i&gt;
+
+This class defines the existence of the body of water, as a participant in a hydrographic network.This body of water is special due to branching and its interaction with the open sea.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_RiverBed">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="surfacefeature/channel"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="surfacefeature/channel"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="surfacefeature/HY_Reach"/>
+        <rdfs:comment>reach (channel segment) whose lowest part is the river bed.</rdfs:comment>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lowest part of a river valley shaped by the flow of water and along which most of the sediment and runoff moves in inter-flood periods. 
+&lt;i&gt;(Source: river bed. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF1042EN.HTM)&lt;/i&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_DrainagePattern">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >term describing the drainage pattern.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_Channel">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >watercourse which periodically or continuously contains moving water, or which forms a connecting link between two bodies of water. 
+also: deepest portion of a river bed, in which the main current flows. 
+
+&lt;i&gt;(Source: channel. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0185EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note: watercourse refers to natural or man-made channel through or along which water may flow. the stream flowing in a watercourse includes through-flow lakes, underground/subterranean streams, or streams in or beneath a glacier.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >HY_Channel</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_Lagoon">
+    <rdfs:subClassOf rdf:resource="utilities/HY_WaterBody"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shallow body of water which has a shallow, restricted inlet from the sea. 
+&lt;i&gt;(Source: lagoon. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0727EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;This class defines the existence of the body of water, as a participant in a hydrographic network.This body of water is special due to its shallow depth and interaction with the open sea.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_Canal">
+    <rdfs:subClassOf rdf:resource="utilities/HY_WaterBody"/>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >man-made open channel, usually of regular cross-sectional shape.
+&lt;i&gt;(Source: canal. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0162EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;This class defines the existence of the body of water, as a participant in a hydrographic network. This body of water is special due to its origin (man-made).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="surfacefeature/HY_ChannelNetwork">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arrangement of natural or man-made drainage channels within an area. 
+&lt;i&gt;(Source: channel network. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0363EN.HTM)&lt;/i&gt;
+&lt;i&gt;
+&lt;/i&gt;Note: channel network provides the connecting system for the hydrographic network.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >general pattern describing the arrangement of the drainage channels within an area. </rdfs:comment>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="surfacefeature/drainagePattern"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="surfacefeature/HY_DrainagePattern"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <j.3:isCollection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:isCollection>
+    <j.3:noPropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:noPropertyType>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="surfacefeature/drainagePattern"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://demo.metalinkage.com.au/def/schema/hy_features/surfacefeature</rdfs:isDefinedBy>
+    <j.3:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:gmlProfileSchema>
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="utilities/HY_Network">
+        <rdfs:comment></rdfs:comment>
+      </rdf:Description>
+    </rdfs:subClassOf>
+    <j.3:byValuePropertyType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:byValuePropertyType>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="utilities/bedProfileTransversal">
+    <rdfs:range rdf:resource="utilities/HY_CrossSection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bedProfileTransversal</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="surfacefeature/drainagePattern">
+    <rdfs:range rdf:resource="surfacefeature/HY_DrainagePattern"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >drainagePattern</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="surfacefeature/borderedChannel">
+    <rdfs:range rdf:resource="surfacefeature/HY_Reach"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >borderedChannel</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="surfacefeature/channel">
+    <rdfs:range rdf:resource="surfacefeature/HY_Reach"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >channel</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/bedProfileLongitudinal">
+    <rdfs:range rdf:resource="utilities/HY_LongitudinalSection"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >bedProfileLongitudinal</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/movingWater">
+    <rdfs:range rdf:resource="utilities/HY_Water_LiquidPhase"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >movingWater</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/containedWaterBody">
+    <rdfs:range rdf:resource="utilities/HY_WaterBodySegment"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >containedWaterBody</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="utilities/coastalWaterBody">
+    <rdfs:range rdf:resource="utilities/HY_WaterBodySegment"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >coastalWaterBody</rdfs:label>
+    <rdfs:domain rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+  </owl:ObjectProperty>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/radial">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >radial</rdfs:label>
+  </j.2:HY_DrainagePattern>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#asSubClass"/>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/pinnate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >pinnate</rdfs:label>
+  </j.2:HY_DrainagePattern>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/trellis">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >trellis</rdfs:label>
+  </j.2:HY_DrainagePattern>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/parallel">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >parallel</rdfs:label>
+  </j.2:HY_DrainagePattern>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="surfacefeature/borderedChannel"/>
+        <owl:allValuesFrom rdf:resource="surfacefeature/HY_Reach"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="surfacefeature/HY_Bank"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>reach (channel segment) bordered by the bank/s.</rdfs:comment>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="surfacefeature/drainagePattern"/>
+        <owl:allValuesFrom rdf:resource="surfacefeature/HY_DrainagePattern"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:nillable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.3:nillable>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="surfacefeature/HY_ChannelNetwork"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/coastalWaterBody"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_WaterBodySegment"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="surfacefeature/HY_Coast"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>water body whose waves therein affect the rising land.</rdfs:comment>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/containedWaterBody"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_WaterBodySegment"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="surfacefeature/HY_ChannelSegment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>water body (segment) contained in the channel (segment) </rdfs:comment>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >2</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/bedProfileTransversal"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_CrossSection"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="surfacefeature/HY_ChannelSegment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>transversal shape of a stream bed in a vertical plane.
+(Source: bed profile. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0125EN.HTM)
+</rdfs:comment>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >3</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/movingWater"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_Water_LiquidPhase"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="surfacefeature/HY_ChannelSegment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>water periodically or continuously moving in the channel (watercourse) </rdfs:comment>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >5</j.3:sequenceNumber>
+  </owl:Axiom>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="utilities/bedProfileLongitudinal"/>
+        <owl:allValuesFrom rdf:resource="utilities/HY_LongitudinalSection"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="surfacefeature/HY_ChannelSegment"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>longitudinal shape of a stream bed in a vertical plane, e.g. thalweg, bank line.
+(Source: bed profile. (2010). In International Glossary of Hydrology Online.Retrieved May 5, 2010, from http://webworld.unesco.org/water/ihp/db/glossary/glu/EN/GF0125EN.HTM)
+</rdfs:comment>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >4</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/distributary">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >distributary</rdfs:label>
+  </j.2:HY_DrainagePattern>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#isProfile"/>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/annular">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >annular</rdfs:label>
+  </j.2:HY_DrainagePattern>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/dendritic">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >dendritic</rdfs:label>
+  </j.2:HY_DrainagePattern>
+  <owl:Axiom>
+    <owl:annotatedTarget>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="surfacefeature/channel"/>
+        <owl:allValuesFrom rdf:resource="surfacefeature/HY_Reach"/>
+      </owl:Restriction>
+    </owl:annotatedTarget>
+    <j.3:inlineOrByReference rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></j.3:inlineOrByReference>
+    <owl:annotatedSource rdf:resource="surfacefeature/HY_RiverBed"/>
+    <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+    <rdfs:comment>reach (channel segment) whose lowest part is the river bed.</rdfs:comment>
+    <j.3:sequenceNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1</j.3:sequenceNumber>
+  </owl:Axiom>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/centripetal">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >centripetal</rdfs:label>
+  </j.2:HY_DrainagePattern>
+  <j.2:HY_DrainagePattern rdf:about="surfacefeature/rectangular">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >rectangular</rdfs:label>
+  </j.2:HY_DrainagePattern>
+</rdf:RDF>

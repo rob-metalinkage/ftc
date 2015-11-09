@@ -1,0 +1,45 @@
+# baseURI: http://csiro.au/hollowWorld/classmaps/20130208/mappingModel
+
+@prefix :        <http://csiro.au/hollowWorld/classmaps/20130208/mappingModel#> .
+@prefix mapping:  <http://csiro.au/hollowWorld/classmaps/20130208/mappingModel#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://csiro.au/hollowWorld/classmaps/20130208/mappingModel>
+      rdf:type owl:Ontology ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+mapping:Entry
+      rdf:type owl:Class .
+
+mapping:GmlObjectElement
+      rdf:type owl:Class .
+
+mapping:GmlPropertyType
+      rdf:type rdfs:Class .
+
+mapping:GmlType
+      rdf:type owl:Class .
+
+mapping:UmlClass
+      rdf:type owl:Class .
+
+mapping:gmlObjectElement
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain mapping:Entry ;
+      rdfs:range mapping:GmlObjectElement .
+
+mapping:gmlPropertyType
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain mapping:Entry ;
+      rdfs:range mapping:GmlPropertyType .
+
+mapping:gmlType
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain mapping:Entry ;
+      rdfs:range mapping:GmlType .
+
+mapping:umlClass
+      rdf:type owl:DatatypeProperty .

@@ -1,0 +1,30 @@
+query=PREFIX void:<http://rdfs.org/ns/void#>
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+PREFIX h2s:<http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/hm2skos#>
+PREFIX h2o: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#>
+
+CONSTRUCT {
+   ?s a skos:Concept .
+   ?s skos:inScheme ?as .
+   ?s skos:broader ?c .
+   ?s h2s:property ?pr .
+   ?s skos:prefLabel ?o .
+}
+WHERE {
+
+
+	GRAPH ?g {
+		{ ?s a owl:Class . } UNION { ?s a owl:Property . }
+	}
+    ?s rdfs:isDefinedBy ?as FILTER ( isIRI(?as) ) . 
+
+   OPTIONAL { ?s rdfs:subClassOf ?c . ?c rdfs:subClassOf h2o:FeatureType }
+   OPTIONAL { ?s rdfs:subClassOf/owl:onProperty ?pr . }
+   ?s rdfs:label ?o FILTER ( ?o != ""^^xsd:string )  . 
+
+}
+
+

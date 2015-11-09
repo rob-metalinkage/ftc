@@ -1,0 +1,16 @@
+query=PREFIX void:<http://rdfs.org/ns/void#>
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX basic:<http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#>
+PREFIX ftc:<http://def.seegrid.csiro.au/def/ftc#>
+
+
+CONSTRUCT  { ?s a ftc:applicationSchema . ?s void:urispace ?u . ?s rdfs:seeAlso ?lid }
+ WHERE {
+GRAPH ?g {
+ ?s basic:stereotype basic:applicationSchema  . 
+ BIND ( STR(?s)  AS ?u ) .
+ BIND ( URI(CONCAT( ?u, "?_view=alternates") ) as ?lid )
+}
+}  

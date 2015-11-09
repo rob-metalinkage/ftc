@@ -1,0 +1,17 @@
+rqInFile,rqContext,rqOutFile,targetContext,clearTargetContext,rqOutFileLoad
+fix_schema.rq,,isdefineby.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,true,true
+#add alternate links
+# add-lid.rq,,alternates.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,false,true
+# put something in place of empty object labels.
+fix_labels.rq,,labels.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,false,true
+# traverse inheritance hierarchy and create closure on all properties for a given feature
+build_inherited_properties.rq,,props.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,false,true
+# generate GML bindings using default rules
+build_classmaps.rq,,classmaps.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,false,true
+# create SKOS and Void descriptions
+build_skos.rq,,skos.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,false,true
+build_void.rq,,void.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,false,true
+# traverse meta-model to identify all resources for given URIs
+infer_features2.rq,,infer_features_1.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,false,true
+infer_formats.rq,,infer_formats.ttl,http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic_extended,false,true
+

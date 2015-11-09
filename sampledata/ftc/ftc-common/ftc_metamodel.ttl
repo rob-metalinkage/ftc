@@ -1,0 +1,229 @@
+#
+# Defines a set of resources describing an information model as created managed by SolidGround
+#
+# VOID dataset descriptions support the LID view: the ability to discover available, heterogenous resources accessible via a URI set.
+#
+# specialisations of skos:mappingRelation are used to handle realtionships between related FeatureTypes at the same or different levels of abstraction
+#
+#
+# Author Rob Atkinson
+
+## Common prefixes - don't change these.
+
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix wv: <http://vocab.org/waiver/terms/norms> .        
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+# lid meta-model
+@prefix lid: <http://id.sirf.net/def/schema/lid/> .
+
+@prefix ftc: <http://def.seegrid.csiro.au/def/ftc#> .
+
+#
+
+
+ftc:applicationSchema a rdfs:Class, owl:Class;
+    rdfs:subClassOf lid:lidset ;
+    rdfs:label "Application Schema";
+    rdfs:comment "A conformance class, containing a set of definitions comprising a domain information model. Application Schemas are modules that may be combined into more complete models. Definitions are dependent on the context of the containing Application Schema, thus they may be considered Registers for these definitions.";
+    # Bind to each viewer available for all objects of this type 
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:uml ;
+     ]  ;
+     
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:owl ;
+     ]  ;
+     
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:xsd ;
+     ]  ;
+         rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:gml31 ;
+     ]  ;
+         rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:gml32 ;
+     ]  ;
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:ftc ;
+     ]  ;  
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:feature ;
+     ]  ;  
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:featureproperties ;
+     ]  ;  
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:featuremappingsto ;
+     ]  ; 
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:featuremappingsfrom ;
+     ]  ;       
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:featurechildren ;
+     ]  ;  
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:featuretypelist ;
+     ]  ;    
+     rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty void:feature ;
+        owl:someValuesFrom ftc:classlist ;
+     ]  ;    
+      
+ #   void:feature sirf:wfs_source, sirf:ldaidservice ;
+
+    .
+ 
+
+
+ftc:xsd a void:TechnicalFeature ;
+    rdfs:label "XSD schema";
+    rdfs:comment "XSD schema, including GML";
+    lid:viewName "XSD" ;
+    lid:featurescope  "set"  ;
+    dcterms:hasFormat <http://purl.org/NET/mediatypes/application/xml> 
+    .   
+
+ftc:gml31 a void:TechnicalFeature ;
+    rdfs:label "GML 3.1 XSD schema";
+    rdfs:comment "GML 3.1 schema";
+    lid:viewName "GML3.1" ;
+    lid:featurescope  "set"  ;
+    dcterms:hasFormat <http://purl.org/NET/mediatypes/application/xml> 
+    .   
+
+ftc:gml32 a void:TechnicalFeature ;
+    rdfs:label "GML 3.2 XSD schema";
+    rdfs:comment "GML 3.2 schema";
+    lid:viewName "GML3.2" ;
+    lid:featurescope  "set"  ;
+    dcterms:hasFormat <http://purl.org/NET/mediatypes/application/xml> 
+    .   
+ 
+ftc:owl a void:TechnicalFeature ;
+    rdfs:label "OWL model download";
+    rdfs:comment "OWL model accessible as a single file";
+    lid:viewName "OWL" ;
+#    lid:featurescope  "item"  ;
+    dcterms:hasFormat <http://purl.org/NET/mediatypes/application/rdf+xml> 
+    .   
+ 
+ftc:uml a void:TechnicalFeature ;
+    rdfs:label "UML model download";
+    rdfs:comment "UML model accessible as a single file";
+    lid:viewName "UML" ;
+    lid:featurescope  "set"  ;
+    dcterms:hasFormat ftc:xmi 
+    .
+
+ftc:ftc a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - Application Schema Overview";
+    rdfs:comment "Bound to a API that exposes the contents of an identified Application Schema";
+    lid:viewName "FTC" ;
+    lid:featurescope "set" ;
+    .
+ 
+
+ftc:feature a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - Feature Type description";
+    rdfs:comment "An API method describes a FeatureType ";
+    lid:viewName "FTC-FeatureType" ;
+    lid:featurescope "item" ;  
+    .
+
+ftc:featureproperties a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - Element properties";
+    rdfs:comment "An API method that exposes the contents of an identified model element";
+    lid:viewName "FTC-FeatureProperties" ;
+    lid:featurescope "item" ;  
+    .
+    
+ftc:featurechildren a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - Element subclasses";
+    rdfs:comment "An API method that list the subclasses of an identified model element";
+    lid:viewName "FTC-ElementChildren" ;
+    lid:featurescope "item" ;  
+    .
+ 
+    
+ftc:featuretypelist a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - FeatureTypeList";
+    rdfs:comment "An API method that list the FeatureTypes in an Application Schema";
+    lid:viewName "FTC-FeatureTypes" ;
+    lid:featurescope "set" ;  
+    .
+
+ftc:classlist a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - Class List";
+    rdfs:comment "An API method that list all the classes defined in an Application Schema";
+    lid:viewName "FTC-Classes" ;
+    lid:featurescope "set" ;  
+    .
+    
+
+ftc:featuremappingsto a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - Mappings from other models to this schema";
+    rdfs:comment "An API method that list all the models containing mappings from another Application Schema to this Application Schema";
+    lid:viewName "FTC-MappingsTo" ;
+    lid:featurescope "set" ;  
+    .
+
+ftc:featuremappingsfrom a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - Mappings to other models from this schema";
+    rdfs:comment "An API method that list all the models containing mappings to another Application Schema from this Application Schema";
+    lid:viewName "FTC-MappingsFrom" ;
+    lid:featurescope "set" ;  
+    .
+    
+    
+ftc:propertylist a lid:LDAViewer ;
+    rdfs:label "Feature Type Catalog - Properties";
+    rdfs:comment "An API method that list all the properties defined in an Application Schema";
+    lid:viewName "FTC-Properties" ;
+    lid:featurescope "set" ;  
+    .
+    
+ # formats 
+ ftc:xmi 
+	rdfs:label "XMI" ;
+	rdfs:comment "XML Model Interchange Format for UML" ;
+    lid:filext ".xmi" ;
+    lid:featurescope "set" ;
+    lid:ldatoken "xmi"
+    
+    .
+  
+  

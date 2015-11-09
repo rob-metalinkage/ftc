@@ -1,0 +1,10 @@
+files,targetRepos,targetContext,clearTargetContext,tmpRepos,tmpContext,clearTmpContext,postProcFile
+#
+# load files from local 
+# 
+C:/repos/github/ISO-TC211/isotc211_GOM_harmonizedOntology/19107/2003/ISO19107_2003SpatialSchema.owl,%REPOSURI%/ftc,http://def.isotc211.org/iso19107/2003/SpatialSchema,true,,,,none
+C:/repos/github/ISO-TC211/isotc211_GOM_harmonizedOntology/19107/2003/iso19107Geometry.owl,%REPOSURI%/ftc,http://def.isotc211.org/iso19107/2003/SpatialSchema,false,,,,none
+
+#  iso19107GeometricAggregates.owl              iso19107TopologicalPrimitive.owl
+#              iso19107GeometricComplex.owl     iso19107GeometryRoot.owl        iso19107Topology.owl
+#iso19107CoordinateGeometry.owl  iso19107GeometricPrimitive.owl   iso19107TopologicalComplex.owl  # iso19107TopologyRoot.owl

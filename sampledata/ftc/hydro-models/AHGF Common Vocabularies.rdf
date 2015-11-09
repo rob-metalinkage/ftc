@@ -1,0 +1,180 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.2="http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0/"
+    xmlns:j.1="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:j.3="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0">
+  <owl:Ontology rdf:about="">
+    <j.1:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.1:xsdEncodingRule>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <j.3:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <gml:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ahgf_common_vocab.xsd</gml:xsdDocument>
+    <gml:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >voc</gml:xmlns>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"/>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >atk093</dc:contributor>
+    <gml:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0</gml:version>
+    <gml:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0/</gml:targetNamespace>
+  </owl:Ontology>
+  <owl:Class rdf:about="1.0/AHGFWaterStoreUse">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Uses of reservoir waterbodies.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/HydroFlowDirections">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Flow directions in relation to the digitised direction.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFPerenniality">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Water feature perenniality.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFWaterbodyType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Types of surface waterbodies (mapped).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFHierarchy">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Importance of associated water feature.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/EnabledDomain">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/common_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Flag indicating whether a feature allows flow or is blocked.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <j.2:AHGFWaterStoreUse rdf:about="1.0/reservoirFloodIrrigation">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >reservoirFloodIrrigation</rdfs:label>
+  </j.2:AHGFWaterStoreUse>
+  <j.2:AHGFPerenniality rdf:about="1.0/perennial">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >perennial</rdfs:label>
+  </j.2:AHGFPerenniality>
+  <j.2:AHGFWaterbodyType rdf:about="1.0/lake">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >lake</rdfs:label>
+  </j.2:AHGFWaterbodyType>
+  <j.2:AHGFHierarchy rdf:about="1.0/minor">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >minor</rdfs:label>
+  </j.2:AHGFHierarchy>
+  <j.2:HydroFlowDirections rdf:about="1.0/withDigitized">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >withDigitized</rdfs:label>
+  </j.2:HydroFlowDirections>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#asSubClass"/>
+  <j.2:EnabledDomain rdf:about="1.0/false">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >false</rdfs:label>
+  </j.2:EnabledDomain>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#isProfile"/>
+  <j.2:HydroFlowDirections rdf:about="1.0/indeterminate">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >indeterminate</rdfs:label>
+  </j.2:HydroFlowDirections>
+  <j.2:HydroFlowDirections rdf:about="1.0/againstDigitized">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >againstDigitized</rdfs:label>
+  </j.2:HydroFlowDirections>
+  <j.2:AHGFHierarchy rdf:about="1.0/major">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >major</rdfs:label>
+  </j.2:AHGFHierarchy>
+  <j.2:AHGFPerenniality rdf:about="1.0/non+Perennial">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >non+Perennial</rdfs:label>
+  </j.2:AHGFPerenniality>
+  <j.2:EnabledDomain rdf:about="1.0/true">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >true</rdfs:label>
+  </j.2:EnabledDomain>
+  <j.2:AHGFWaterStoreUse rdf:about="1.0/not+Applicable">
+    <rdf:type rdf:resource="1.0/AHGFPerenniality"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >not+Applicable</rdfs:label>
+    <rdf:type rdf:resource="1.0/AHGFHierarchy"/>
+  </j.2:AHGFWaterStoreUse>
+  <j.2:AHGFWaterbodyType rdf:about="1.0/reservoir">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >reservoir</rdfs:label>
+  </j.2:AHGFWaterbodyType>
+  <j.2:AHGFWaterStoreUse rdf:about="1.0/reservoirTownRural">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >reservoirTownRural</rdfs:label>
+  </j.2:AHGFWaterStoreUse>
+  <j.2:AHGFWaterbodyType rdf:about="1.0/swamp">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >swamp</rdfs:label>
+  </j.2:AHGFWaterbodyType>
+  <j.2:HydroFlowDirections rdf:about="1.0/uninitialized">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >uninitialized</rdfs:label>
+  </j.2:HydroFlowDirections>
+</rdf:RDF>

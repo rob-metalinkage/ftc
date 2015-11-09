@@ -1,0 +1,136 @@
+<rdf:RDF
+    xmlns:j.0="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#"
+    xmlns:basic="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.1="http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0/"
+    xmlns:j.2="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:gml="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/gml#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:j.3="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2006/temporal"/>
+    <j.2:xsdEncodingRule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >iso19136_2007</j.2:xsdEncodingRule>
+    <gml:xmlns rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >shnv</gml:xmlns>
+    <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >atk093</dc:contributor>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/wirada/tnd/2012/u2o"/>
+    <gml:targetNamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0/</gml:targetNamespace>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"/>
+    <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic"/>
+    <gml:xsdDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ahgf_sh_network_vocabs.xsd</gml:xsdDocument>
+    <gml:version rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.0</gml:version>
+    <j.3:stereotype rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#applicationSchema"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="1.0/AHGFCatchmentType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFNetworkStreamType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFNetworkNodeType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="1.0/AHGFContractedCatchmentType">
+    <j.0:isAbstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</j.0:isAbstract>
+    <gml:gmlProfileSchema rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></gml:gmlProfileSchema>
+    <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://bom.gov.au/namespaces/ahgf/sh_network_vocabs/1.0</rdfs:isDefinedBy>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#CodeList"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    ></rdfs:label>
+  </owl:Class>
+  <j.1:AHGFNetworkNodeType rdf:about="1.0/networkHeadNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkHeadNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFNetworkNodeType rdf:about="1.0/networkTerminusNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkTerminusNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFNetworkNodeType rdf:about="1.0/networkWaterAreaNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkWaterAreaNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFNetworkNodeType rdf:about="1.0/networkJunctionNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkJunctionNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFNetworkNodeType rdf:about="1.0/networkArtificialNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkArtificialNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFContractedCatchmentType rdf:about="1.0/contractedArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >contractedArea</rdfs:label>
+  </j.1:AHGFContractedCatchmentType>
+  <j.1:AHGFNetworkNodeType rdf:about="1.0/networkCliffNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkCliffNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFNetworkStreamType rdf:about="1.0/networkAtificialFlowSegment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkAtificialFlowSegment</rdfs:label>
+  </j.1:AHGFNetworkStreamType>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#asSubClass"/>
+  <j.1:AHGFNetworkStreamType rdf:about="1.0/networkWaterAreaSegment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkWaterAreaSegment</rdfs:label>
+  </j.1:AHGFNetworkStreamType>
+  <j.1:AHGFNetworkStreamType rdf:about="1.0/networkFlowSegment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkFlowSegment</rdfs:label>
+  </j.1:AHGFNetworkStreamType>
+  <j.1:AHGFNetworkNodeType rdf:about="1.0/networkGhostNode">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >networkGhostNode</rdfs:label>
+  </j.1:AHGFNetworkNodeType>
+  <j.1:AHGFContractedCatchmentType rdf:about="1.0/noFlowArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >noFlowArea</rdfs:label>
+  </j.1:AHGFContractedCatchmentType>
+  <j.1:AHGFContractedCatchmentType rdf:about="1.0/nonContractedArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >nonContractedArea</rdfs:label>
+  </j.1:AHGFContractedCatchmentType>
+  <owl:AnnotationProperty rdf:about="http://def.seegrid.csiro.au/isotc211/iso19150/2012/hm2owl#isProfile"/>
+  <j.1:AHGFCatchmentType rdf:about="1.0/catchment">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >catchment</rdfs:label>
+  </j.1:AHGFCatchmentType>
+</rdf:RDF>
