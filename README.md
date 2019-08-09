@@ -1,6 +1,6 @@
-# ftc
+# Feature Type Catalog Linked Data API
 
-Feature Type Catalog Linked Data API
+status: this is a development spike that may be revived at some future time - but may be made irrelevant by an alternative frame-based approach to data modelling in RDF such as SHACL
 
 Implements convenience APIs to access ontologies describing "Feature Types" - i.e. models for spatial objects.
 
